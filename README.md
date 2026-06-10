@@ -1,7 +1,3 @@
-Since this is a serious FPGA/DSP project, your README should look professional and explain **what the project does, its architecture, verification methodology, and future roadmap**. You can copy the following directly as your `README.md`.
-
----
-
 # AXI4-Stream VDIF Packetizer using Vitis HLS
 
 A high-performance **VDIF (VLBI Data Interchange Format) packetizer** implemented using **AMD Vitis HLS** for FPGA-based radio astronomy and high-speed data acquisition systems.
