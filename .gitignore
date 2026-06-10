@@ -1,0 +1,23 @@
+# Vitis HLS generated files
+*.log
+*.jou
+*.str
+
+# Build folders
+build/
+solution/
+.vitis/
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# VS Code
+.vscode/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Binary output files
+*.bin
