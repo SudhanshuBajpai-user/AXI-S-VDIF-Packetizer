@@ -1,199 +1,100 @@
-# --------------------------------------------------
-# Configuration
-# --------------------------------------------------
-
-# ADC_WIDTH = 2          # Change to 2, 4, or 8
-# NUM_ADC_SAMPLES = 16384
-
-# ADC_WIDTH = 4
-# NUM_ADC_SAMPLES = 8192
+FRAME_SIZE = 1056
+HEADER_SIZE = 32
+PAYLOAD_SIZE = 1024
 
 ADC_WIDTH = 8
-NUM_ADC_SAMPLES = 4096
+NUM_FRAMES = 8
 
-VDIF_FILE = (
-    r"vdif_packetizer_hls\vdif_packetizer"
-    r"\hls\csim\build\vdif_output.bin"
+FILE = (
+    r"vdif_packetizer_hls\vdif_packetizer\hls\csim\build\vdif_output.bin"
+)
+
+# -----------------------------
+# Read HLS payload
+# -----------------------------
+
+hls_payload = bytearray()
+
+with open(FILE, "rb") as f:
+
+    for frame in range(NUM_FRAMES):
+
+        # Skip VDIF header
+        f.seek(HEADER_SIZE, 1)
+
+        # Read payload
+        data = f.read(PAYLOAD_SIZE)
+
+        hls_payload.extend(data)
+
+
+# -----------------------------
+# Generate Golden ADC data
+# -----------------------------
+
+golden = bytearray()
+
+samples = NUM_FRAMES * PAYLOAD_SIZE
+
+for i in range(samples):
+
+    sample = i & ((1 << ADC_WIDTH) - 1)
+
+    golden.append(sample)
+
+
+# -----------------------------
+# Compare
+# -----------------------------
+
+print("VDIF Golden Verification")
+print("========================")
+
+print(f"ADC Width: {ADC_WIDTH} bits")
+print(f"ADC Samples: {samples}")
+
+print()
+print("Verification Started")
+print("--------------------")
+
+print(
+    "HLS Payload Bytes   :",
+    len(hls_payload)
+)
+
+print(
+    "Golden Payload Bytes:",
+    len(golden)
 )
 
 
-# --------------------------------------------------
-# Python Golden Bit Packer
-# Matches HLS axi_stream_packer()
-# --------------------------------------------------
+if hls_payload == golden:
 
-def pack_adc(adc_width, num_samples):
+    print()
+    print("PASS: Payload matches bit-for-bit")
 
-    samples_per_word = 32 // adc_width
-    mask = (1 << adc_width) - 1
+else:
 
-    packed_words = []
+    print()
+    print("FAIL: Payload mismatch")
 
-    packed_data = 0
-    count = 0
+    for i in range(len(golden)):
 
-
-    for i in range(num_samples):
-
-        # Same ADC pattern as testbench
-        sample = i & mask
-
-        # Same bit placement as HLS
-        packed_data |= sample << (count * adc_width)
-
-        count += 1
-
-
-        if count == samples_per_word:
-
-            packed_words.append(packed_data)
-
-            packed_data = 0
-            count = 0
-
-
-    return packed_words
-
-
-# --------------------------------------------------
-# Extract payload from VDIF output
-# --------------------------------------------------
-
-def extract_hls_payload(filename):
-
-    with open(filename, "rb") as f:
-        data = f.read()
-
-
-    words = []
-
-
-    for i in range(0, len(data), 4):
-
-        word = int.from_bytes(
-            data[i:i+4],
-            "little"
-        )
-
-        words.append(word)
-
-
-    HEADER_WORDS = 8
-    PAYLOAD_WORDS = 256
-    FRAME_WORDS = HEADER_WORDS + PAYLOAD_WORDS
-
-
-    payload = []
-
-
-    number_of_frames = len(words) // FRAME_WORDS
-
-
-    for frame in range(number_of_frames):
-
-        start = frame * FRAME_WORDS + HEADER_WORDS
-
-        end = start + PAYLOAD_WORDS
-
-
-        payload.extend(
-            words[start:end]
-        )
-
-
-    return payload
-
-
-# --------------------------------------------------
-# Compare Results
-# --------------------------------------------------
-
-def compare_payload(hls_payload, golden_payload):
-
-    print("\nVerification Started")
-    print("--------------------")
-
-
-    print(
-        "HLS Payload Words    :",
-        len(hls_payload)
-    )
-
-    print(
-        "Golden Payload Words :",
-        len(golden_payload)
-    )
-
-
-    if len(hls_payload) != len(golden_payload):
-
-        print("\nFAILED: Size mismatch")
-
-        return False
-
-
-    for index in range(len(hls_payload)):
-
-        if hls_payload[index] != golden_payload[index]:
+        if hls_payload[i] != golden[i]:
 
             print(
-                "\nFAILED at word",
-                index
+                "First mismatch at byte",
+                i
             )
 
             print(
-                "HLS    = 0x%08X"
-                % hls_payload[index]
+                "HLS    =",
+                hex(hls_payload[i])
             )
 
             print(
-                "Golden = 0x%08X"
-                % golden_payload[index]
+                "Golden =",
+                hex(golden[i])
             )
 
-            return False
-
-
-    print(
-        "\nPASS: Payload matches bit-for-bit"
-    )
-
-    return True
-
-
-# --------------------------------------------------
-# Main
-# --------------------------------------------------
-
-if __name__ == "__main__":
-
-    print("VDIF Golden Verification")
-    print("========================")
-
-    print(
-        "ADC Width:",
-        ADC_WIDTH,
-        "bits"
-    )
-
-    print(
-        "ADC Samples:",
-        NUM_ADC_SAMPLES
-    )
-
-
-    golden_payload = pack_adc(
-        ADC_WIDTH,
-        NUM_ADC_SAMPLES
-    )
-
-
-    hls_payload = extract_hls_payload(
-        VDIF_FILE
-    )
-
-
-    compare_payload(
-        hls_payload,
-        golden_payload
-    )
+            break
