@@ -1,0 +1,40 @@
+  **** HLS Build v2025.2 6295257
+INFO: [HLS 200-2005] Using work_dir C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer_hls/vdif_packetizer_hls/vdif_packetizer 
+INFO: [HLS 200-2176] Writing Vitis IDE component file C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer_hls/vdif_packetizer_hls/vdif_packetizer/vitis-comp.json
+INFO: [HLS 200-10] Creating and opening component 'C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer_hls/vdif_packetizer_hls/vdif_packetizer'.
+INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.amd.com/access/sources/dita/topic?Doc_Version=2025.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-2174] Applying component config ini file hls_config.cfg
+INFO: [HLS 200-1465] Applying config ini 'syn.file=../../vdif_packetizer/hls/adc_packer.cpp' from hls_config.cfg(8)
+INFO: [HLS 200-10] Adding design file 'C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer/hls/adc_packer.cpp' to the project
+INFO: [HLS 200-1465] Applying config ini 'syn.file=../../vdif_packetizer/hls/axis_types.h' from hls_config.cfg(9)
+INFO: [HLS 200-10] Adding design file 'C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer/hls/axis_types.h' to the project
+INFO: [HLS 200-1465] Applying config ini 'syn.file=../../vdif_packetizer/hls/header_generator.cpp' from hls_config.cfg(10)
+INFO: [HLS 200-10] Adding design file 'C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer/hls/header_generator.cpp' to the project
+INFO: [HLS 200-1465] Applying config ini 'syn.file=../../vdif_packetizer/hls/timestamp_engine.cpp' from hls_config.cfg(11)
+INFO: [HLS 200-10] Adding design file 'C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer/hls/timestamp_engine.cpp' to the project
+INFO: [HLS 200-1465] Applying config ini 'syn.file=../../vdif_packetizer/hls/top.cpp' from hls_config.cfg(12)
+INFO: [HLS 200-10] Adding design file 'C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer/hls/top.cpp' to the project
+INFO: [HLS 200-1465] Applying config ini 'syn.file=../../vdif_packetizer/hls/vdif_config.h' from hls_config.cfg(13)
+INFO: [HLS 200-10] Adding design file 'C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer/hls/vdif_config.h' to the project
+INFO: [HLS 200-1465] Applying config ini 'syn.file=../../vdif_packetizer/hls/vdif_framer.cpp' from hls_config.cfg(14)
+INFO: [HLS 200-10] Adding design file 'C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer/hls/vdif_framer.cpp' to the project
+INFO: [HLS 200-1465] Applying config ini 'tb.file=../../vdif_packetizer/tb/tb_top.cpp' from hls_config.cfg(15)
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer/tb/tb_top.cpp' to the project
+INFO: [HLS 200-1465] Applying config ini 'syn.top=vdif_packetizer' from hls_config.cfg(7)
+INFO: [HLS 200-1465] Applying config ini 'flow_target=vivado' from hls_config.cfg(4)
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.amd.com/access/sources/dita/topic?Doc_Version=2025.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1465] Applying config ini 'part=xc7z020clg400-1' from hls_config.cfg(1)
+INFO: [HLS 200-1465] Applying config ini 'cosim.trace_level=all' from hls_config.cfg(16)
+INFO: [HLS 200-1465] Applying config ini 'package.output.format=ip_catalog' from hls_config.cfg(5)
+INFO: [HLS 200-2176] Writing Vitis IDE component file C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer_hls/vdif_packetizer_hls/vdif_packetizer/vitis-comp.json
+WARNING: [COSIM 212-382] This design has top-level non-blocking FIFO/Stream accesses with ap_ctrl_none control interface, which may result in mismatches or simulation hanging.
+ERROR: [COSIM 212-366] Cannot delete directory  'sim/verilog': it is being used by another program. Please close the program and try again.
+error deleting "sim/verilog": permission denied
+WARNING: [HLS 200-1621] This design has top-level non-blocking FIFO/Stream accesses with ap_ctrl_none control interface which is not supported by cosimulation and could be the cause of this cosimulation failure. Please check the earlier messages to verify that there was indeed a cosimulation mismatch rather than a compilation error. If there was a cosimulation mismatch then verification of this interface combination must be done using a custom RTL testbench. See UG1399 for interface combinations supported by cosimulation.
+ERROR: [COSIM 212-5] *** C/RTL co-simulation file generation failed. ***
+ERROR: [COSIM 212-4] *** C/RTL co-simulation finished: FAIL ***
+ERROR: 
+INFO: [HLS 200-112] Total CPU user time: 2 seconds. Total CPU system time: 3 seconds. Total elapsed time: 7.55 seconds; peak allocated memory: 206.344 MB.

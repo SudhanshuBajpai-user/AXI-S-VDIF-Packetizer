@@ -1,0 +1,79 @@
+
+`timescale 1ns / 1ps
+
+module axis_bram_writer #(
+    parameter integer FRAME_WORDS = 264,
+    parameter integer BRAM_WORDS  = 2048
+) (
+    input  wire        clk,
+    input  wire        rst_n,
+
+    // AXI4-Stream input
+    input  wire [31:0] s_axis_tdata,
+    input  wire        s_axis_tvalid,
+    input  wire        s_axis_tlast,
+    output wire        s_axis_tready,
+
+    // BRAM write interface: byte-addressed
+    output reg  [31:0] bram_addr,
+    output reg  [31:0] bram_data,
+    output reg         bram_we,
+
+    // Sticky status: at least one frame completed
+    output reg         packet_done
+);
+
+    localparam integer ADDR_WIDTH = $clog2(BRAM_WORDS);
+    localparam integer FRAME_COUNT_WIDTH = $clog2(FRAME_WORDS);
+
+    reg [ADDR_WIDTH-1:0] write_addr;
+    reg [FRAME_COUNT_WIDTH-1:0] frame_word_count;
+    reg capture_done;
+
+    // Accept consecutive frames until the BRAM buffer fills.
+    assign s_axis_tready = rst_n && !capture_done;
+
+    always @(posedge clk) begin
+        if (!rst_n) begin
+            write_addr      <= {ADDR_WIDTH{1'b0}};
+            frame_word_count <= {FRAME_COUNT_WIDTH{1'b0}};
+            capture_done    <= 1'b0;
+
+            bram_addr       <= 32'd0;
+            bram_data       <= 32'd0;
+            bram_we         <= 1'b0;
+            packet_done     <= 1'b0;
+        end else begin
+            // Default: no write unless a transfer is accepted.
+            bram_we <= 1'b0;
+
+            if (!capture_done && s_axis_tvalid && s_axis_tready) begin
+                // Write the accepted word at its byte address.
+                bram_addr <=
+                    ({{(32-ADDR_WIDTH){1'b0}}, write_addr} << 2);
+                bram_data <= s_axis_tdata;
+                bram_we   <= 1'b1;
+
+                // Track completion of individual frames.
+                if (s_axis_tlast ||
+                    frame_word_count == FRAME_WORDS - 1) begin
+
+                    frame_word_count <= {FRAME_COUNT_WIDTH{1'b0}};
+                    packet_done <= 1'b1;
+
+                end else begin
+                    frame_word_count <= frame_word_count + 1'b1;
+                end
+
+                // Keep writing across frames until BRAM is full.
+                if (write_addr == BRAM_WORDS - 1) begin
+                    capture_done <= 1'b1;
+                end else begin
+                    write_addr <= write_addr + 1'b1;
+                end
+            end
+        end
+    end
+
+endmodule
+

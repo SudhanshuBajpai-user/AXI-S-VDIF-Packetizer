@@ -1,0 +1,142 @@
+
+
+================================================================
+== Vitis HLS Report for 'vdif_packetizer_core_8_s'
+================================================================
+* Date:           Thu Oct 15 10:24:34 2026
+
+* Version:        2025.2 (Build 6295257 on Nov 14 2025)
+* Project:        vdif_packetizer
+* Solution:       hls (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  5.297 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+-----+-----+----------+
+    |  Latency (cycles) |   Latency (absolute)  |  Interval | Pipeline |
+    |   min   |   max   |    min    |    max    | min | max |   Type   |
+    +---------+---------+-----------+-----------+-----+-----+----------+
+    |        4|        4|  40.000 ns|  40.000 ns|    1|    1|  dataflow|
+    +---------+---------+-----------+-----------+-----+-----+----------+
+
+    + Detail: 
+        * Instance: 
+        +------------------+-----------------+---------+---------+-----------+-----------+-----+-----+---------+
+        |                  |                 |  Latency (cycles) |   Latency (absolute)  |  Interval | Pipeline|
+        |     Instance     |      Module     |   min   |   max   |    min    |    max    | min | max |   Type  |
+        +------------------+-----------------+---------+---------+-----------+-----------+-----+-----+---------+
+        |adc_packer_8_U0   |adc_packer_8_s   |        1|        1|  10.000 ns|  10.000 ns|    1|    1|      yes|
+        |vdif_framer_8_U0  |vdif_framer_8_s  |        2|        2|  20.000 ns|  20.000 ns|    1|    1|      yes|
+        +------------------+-----------------+---------+---------+-----------+-----------+-----+-----+---------+
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-----+--------+-------+-----+
+|       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|
++-----------------+---------+-----+--------+-------+-----+
+|DSP              |        -|    -|       -|      -|    -|
+|Expression       |        -|    -|       0|      2|    -|
+|FIFO             |        2|    -|     163|     82|    -|
+|Instance         |        -|    -|     290|    593|    -|
+|Memory           |        -|    -|       -|      -|    -|
+|Multiplexer      |        -|    -|       -|      -|    -|
+|Register         |        -|    -|       -|      -|    -|
++-----------------+---------+-----+--------+-------+-----+
+|Total            |        2|    0|     453|    677|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Available        |      280|  220|  106400|  53200|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Utilization (%)  |       ~0|    0|      ~0|      1|    0|
++-----------------+---------+-----+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    +------------------+-----------------+---------+----+-----+-----+-----+
+    |     Instance     |      Module     | BRAM_18K| DSP|  FF | LUT | URAM|
+    +------------------+-----------------+---------+----+-----+-----+-----+
+    |adc_packer_8_U0   |adc_packer_8_s   |        0|   0|   88|  146|    0|
+    |vdif_framer_8_U0  |vdif_framer_8_s  |        0|   0|  202|  447|    0|
+    +------------------+-----------------+---------+----+-----+-----+-----+
+    |Total             |                 |        0|   0|  290|  593|    0|
+    +------------------+-----------------+---------+----+-----+-----+-----+
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    +---------------+---------+-----+----+-----+------+-----+---------+
+    |      Name     | BRAM_18K|  FF | LUT| URAM| Depth| Bits| Size:D*B|
+    +---------------+---------+-----+----+-----+------+-----+---------+
+    |packed_fifo_U  |        2|  163|   0|    -|  1024|   32|    32768|
+    +---------------+---------+-----+----+-----+------+-----+---------+
+    |Total          |        2|  163|   0|    0|  1024|   32|    32768|
+    +---------------+---------+-----+----+-----+------+-----+---------+
+
+    * Expression: 
+    +--------------+----------+----+---+----+------------+------------+
+    | Variable Name| Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +--------------+----------+----+---+----+------------+------------+
+    |ap_idle       |       and|   0|  0|   2|           1|           1|
+    +--------------+----------+----+---+----+------------+------------+
+    |Total         |          |   0|  0|   2|           1|           1|
+    +--------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    N/A
+
+    * Register: 
+    N/A
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-------------------+-----+-----+------------+-------------------------+--------------+
+|     RTL Ports     | Dir | Bits|  Protocol  |      Source Object      |    C Type    |
++-------------------+-----+-----+------------+-------------------------+--------------+
+|adc_in_TDATA       |   in|    8|        axis|                   adc_in|       pointer|
+|adc_in_TVALID      |   in|    1|        axis|                   adc_in|       pointer|
+|adc_in_TREADY      |  out|    1|        axis|                   adc_in|       pointer|
+|pps_in_TDATA       |   in|    8|        axis|                   pps_in|       pointer|
+|pps_in_TVALID      |   in|    1|        axis|                   pps_in|       pointer|
+|pps_in_TREADY      |  out|    1|        axis|                   pps_in|       pointer|
+|packet_out_TDATA   |  out|   32|        axis|      packet_out_V_data_V|       pointer|
+|packet_out_TKEEP   |  out|    4|        axis|      packet_out_V_keep_V|       pointer|
+|packet_out_TSTRB   |  out|    4|        axis|      packet_out_V_strb_V|       pointer|
+|packet_out_TLAST   |  out|    1|        axis|      packet_out_V_last_V|       pointer|
+|packet_out_TVALID  |  out|    1|        axis|      packet_out_V_last_V|       pointer|
+|packet_out_TREADY  |   in|    1|        axis|      packet_out_V_last_V|       pointer|
+|ap_clk             |   in|    1|  ap_ctrl_hs|  vdif_packetizer_core<8>|  return value|
+|ap_rst             |   in|    1|  ap_ctrl_hs|  vdif_packetizer_core<8>|  return value|
+|ap_start           |   in|    1|  ap_ctrl_hs|  vdif_packetizer_core<8>|  return value|
+|ap_done            |  out|    1|  ap_ctrl_hs|  vdif_packetizer_core<8>|  return value|
+|ap_ready           |  out|    1|  ap_ctrl_hs|  vdif_packetizer_core<8>|  return value|
+|ap_idle            |  out|    1|  ap_ctrl_hs|  vdif_packetizer_core<8>|  return value|
+|ap_continue        |   in|    1|  ap_ctrl_hs|  vdif_packetizer_core<8>|  return value|
++-------------------+-----+-----+------------+-------------------------+--------------+
+

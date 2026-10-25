@@ -1,0 +1,350 @@
+﻿========== WRITER TESTBENCH ==========
+
+`timescale 1ns / 1ps
+
+module tb_axis_bram_writer;
+
+    reg clk = 0;
+    reg rst_n = 0;
+
+    reg  [31:0] s_axis_tdata = 0;
+    reg         s_axis_tvalid = 0;
+    reg         s_axis_tlast = 0;
+    wire        s_axis_tready;
+
+    wire [31:0] bram_addr;
+    wire [31:0] bram_data;
+    wire        bram_we;
+    wire        packet_done;
+
+    wire [31:0] douta;
+    wire [31:0] doutb;
+
+    reg  [31:0] read_addr = 0;
+    integer i;
+    integer errors = 0;
+    integer accepted_words = 0;
+    reg accepted;
+
+    always #4 clk = ~clk;
+
+    axis_bram_writer #(
+        .FRAME_WORDS(264)
+    ) dut (
+        .clk(clk),
+        .rst_n(rst_n),
+        .s_axis_tdata(s_axis_tdata),
+        .s_axis_tvalid(s_axis_tvalid),
+        .s_axis_tlast(s_axis_tlast),
+        .s_axis_tready(s_axis_tready),
+        .bram_addr(bram_addr),
+        .bram_data(bram_data),
+        .bram_we(bram_we),
+        .packet_done(packet_done)
+    );
+
+    design_1_blk_mem_gen_0_0 mem (
+        .clka(clk),
+        .ena(1'b1),
+        .wea({4{bram_we}}),
+        .addra(bram_addr),
+        .dina(bram_data),
+        .douta(douta),
+
+        .clkb(clk),
+        .enb(1'b1),
+        .web(4'b0000),
+        .addrb(read_addr),
+        .dinb(32'b0),
+        .doutb(doutb)
+    );
+
+    initial begin
+        $display("Starting BRAM writer readback test");
+
+        repeat (5) @(negedge clk);
+        rst_n = 1'b1;
+
+        // Send 264 words. TLAST is asserted on the final word.
+        for (i = 0; i < 264; i = i + 1) begin
+            accepted = 1'b0;
+
+            @(negedge clk);
+            s_axis_tdata  = 32'hA5000000 | i;
+            s_axis_tlast  = (i == 263);
+            s_axis_tvalid = 1'b1;
+
+            while (!accepted) begin
+                @(posedge clk);
+                if (s_axis_tready)
+                    accepted = 1'b1;
+            end
+
+            accepted_words = accepted_words + 1;
+
+            @(negedge clk);
+            s_axis_tvalid = 1'b0;
+            s_axis_tlast  = 1'b0;
+        end
+
+        // Allow registered BRAM write signals to settle.
+        repeat (3) @(negedge clk);
+
+        $display("Accepted input words: %0d", accepted_words);
+        $display("packet_done: %b", packet_done);
+
+        // Read back all 264 words from Port B.
+        for (i = 0; i < 264; i = i + 1) begin
+            @(negedge clk);
+            read_addr = i * 4;
+
+            // Port B has a one-cycle read latency.
+            @(posedge clk);
+            @(negedge clk);
+
+            if (doutb !== (32'hA5000000 | i)) begin
+                errors = errors + 1;
+
+                if (errors <= 10)
+                    $display(
+                        "MISMATCH word=%0d addr=%0d expected=%h actual=%h",
+                        i, i*4, (32'hA5000000 | i), doutb
+                    );
+            end
+        end
+
+        $display("Readback errors: %0d", errors);
+
+        if (accepted_words == 264 &&
+            packet_done &&
+            errors == 0)
+            $display("PASS: all 264 words verified in BRAM");
+        else
+            $display("FAIL: BRAM writer/readback verification failed");
+
+        $finish;
+    end
+
+    initial begin
+        #100000;
+        $display("ERROR: Testbench timeout");
+        $finish;
+    end
+
+endmodule
+
+========== EXISTING UDP SENDER ==========
+#include <stdio.h>
+#include <stdint.h>
+#include <string.h>
+#include <unistd.h>
+#include <fcntl.h>
+#include <stdlib.h>
+#include <signal.h>
+#include <sys/mman.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <arpa/inet.h>
+
+#define BRAM_BASE       0x40000000
+#define BRAM_SIZE       0x2000
+
+#define FRAME_WORDS     264
+#define FRAME_BYTES     (FRAME_WORDS * 4)
+
+#define SRC_PORT        8001
+#define DEFAULT_DST_PORT 8002
+
+volatile sig_atomic_t running = 1;
+
+void handle_sigint(int sig)
+{
+    (void)sig;
+    running = 0;
+}
+
+int main(int argc, char *argv[])
+{
+    int fd;
+    int sockfd;
+
+    volatile uint32_t *bram;
+
+    uint8_t packet[FRAME_BYTES];
+
+    struct sockaddr_in local_addr;
+    struct sockaddr_in dest_addr;
+
+    const char *dest_ip;
+    int dest_port;
+
+    uint64_t packet_count = 0;
+
+    if (argc < 2 || argc > 3)
+    {
+        printf("Usage: %s <PC_IP> [PORT]\n", argv[0]);
+        return 1;
+    }
+
+    dest_ip = argv[1];
+
+    if (argc == 3)
+        dest_port = atoi(argv[2]);
+    else
+        dest_port = DEFAULT_DST_PORT;
+
+    signal(SIGINT, handle_sigint);
+
+    fd = open("/dev/mem", O_RDWR | O_SYNC);
+
+    if (fd < 0)
+    {
+        perror("open /dev/mem");
+        return 1;
+    }
+
+    bram = (volatile uint32_t *)mmap(
+        NULL,
+        BRAM_SIZE,
+        PROT_READ | PROT_WRITE,
+        MAP_SHARED,
+        fd,
+        BRAM_BASE
+    );
+
+    if (bram == MAP_FAILED)
+    {
+        perror("mmap BRAM");
+        close(fd);
+        return 1;
+    }
+
+    sockfd = socket(AF_INET, SOCK_DGRAM, 0);
+
+    if (sockfd < 0)
+    {
+        perror("socket");
+        munmap((void *)bram, BRAM_SIZE);
+        close(fd);
+        return 1;
+    }
+
+    memset(&local_addr, 0, sizeof(local_addr));
+
+    local_addr.sin_family = AF_INET;
+    local_addr.sin_addr.s_addr = htonl(INADDR_ANY);
+    local_addr.sin_port = htons(SRC_PORT);
+
+    if (bind(
+        sockfd,
+        (struct sockaddr *)&local_addr,
+        sizeof(local_addr)
+    ) < 0)
+    {
+        perror("bind");
+        close(sockfd);
+        munmap((void *)bram, BRAM_SIZE);
+        close(fd);
+        return 1;
+    }
+
+    memset(&dest_addr, 0, sizeof(dest_addr));
+
+    dest_addr.sin_family = AF_INET;
+    dest_addr.sin_port = htons(dest_port);
+
+    if (inet_pton(AF_INET, dest_ip, &dest_addr.sin_addr) != 1)
+    {
+        fprintf(stderr, "Invalid destination IP: %s\n", dest_ip);
+        close(sockfd);
+        munmap((void *)bram, BRAM_SIZE);
+        close(fd);
+        return 1;
+    }
+
+    printf("VDIF UDP Continuous Sender\n");
+    printf("Destination : %s:%d\n", dest_ip, dest_port);
+    printf("Source port : %d\n", SRC_PORT);
+    printf("Frame size  : %d bytes\n", FRAME_BYTES);
+    printf("Press Ctrl+C to stop.\n");
+
+    while (running)
+    {
+        for (int i = 0; i < FRAME_WORDS; i++)
+        {
+            uint32_t word = bram[i];
+            uint32_t network_word = htonl(word);
+
+            memcpy(
+                packet + (i * 4),
+                &network_word,
+                sizeof(uint32_t)
+            );
+        }
+
+        ssize_t sent = sendto(
+            sockfd,
+            packet,
+            FRAME_BYTES,
+            0,
+            (struct sockaddr *)&dest_addr,
+            sizeof(dest_addr)
+        );
+
+        if (sent < 0)
+        {
+            perror("sendto");
+            break;
+        }
+
+        packet_count++;
+
+        if ((packet_count % 1000) == 0)
+        {
+            printf(
+                "Packets sent: %llu\n",
+                (unsigned long long)packet_count
+            );
+        }
+    }
+
+    printf(
+        "\nStopped. Total packets sent: %llu\n",
+        (unsigned long long)packet_count
+    );
+
+    close(sockfd);
+
+    munmap((void *)bram, BRAM_SIZE);
+
+    close(fd);
+
+    return 0;
+}
+
+========== BUILD ARTIFACTS ==========
+
+FullName                                                                                    Length LastWriteTime      
+--------                                                                                    ------ -------------      
+C:\Users\SUDHANSHU_BAJPAI\Projects\ip\project_1\project_1.runs\impl_1\design_1_wrapper.bit 4045692 18-10-2026 15:38:12
+C:\Users\SUDHANSHU_BAJPAI\Projects\ip\project_1\project_1.runs\impl_1\design_1_wrapper.ltx   23712 18-10-2026 15:38:12
+C:\Users\SUDHANSHU_BAJPAI\Projects\ip\project_1\project_1.runs\impl_1\runme.log              58118 18-10-2026 15:38:12
+C:\Users\SUDHANSHU_BAJPAI\Projects\ip\project_1\project_1.runs\synth_1\runme.log             57492 18-10-2026 15:31:08
+
+
+
+
+========== WARNINGS: C:\Users\SUDHANSHU_BAJPAI\Projects\ip\project_1\project_1.runs\impl_1\runme.log ==========
+54 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+90 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+101 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+115 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+132 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+164 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+write_bitstream completed successfully
+
+========== WARNINGS: C:\Users\SUDHANSHU_BAJPAI\Projects\ip\project_1\project_1.runs\synth_1\runme.log ==========
+CRITICAL WARNING: [Vivado 12-4739] set_clock_groups:No valid object(s) found for '-group [get_clocks clk_fpga_0]'. [C:/Users/SUDHANSHU_BAJPAI/Projects/ip/project_1/project_1.srcs/constrs_1/new/clock_groups.xdc:1]
+CRITICAL WARNING: [Vivado 12-4739] set_clock_groups:No valid object(s) found for '-group '. [C:/Users/SUDHANSHU_BAJPAI/Projects/ip/project_1/project_1.srcs/constrs_1/new/clock_groups.xdc:1]
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+82 Infos, 121 Warnings, 2 Critical Warnings and 0 Errors encountered.

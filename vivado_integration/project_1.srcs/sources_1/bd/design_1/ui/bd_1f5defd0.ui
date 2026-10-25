@@ -1,0 +1,102 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Addressing View_Layers":"/processing_system7_0_FCLK_CLK0:false|/c_counter_binary_0_Q:false|/rst_ps7_0_50M_peripheral_aresetn:false|/processing_system7_0_FCLK_RESET0_N:false|/rp_adc_capture_0_adc_clk_o:false|",
+   "Addressing View_ScaleFactor":"1.25",
+   "Addressing View_TopLeft":"-20,-65",
+   "Clocking and Reset View_Layers":"/processing_system7_0_FCLK_CLK0:true|/rp_adc_capture_0_adc_clk_o:true|/rst_ps7_0_50M_peripheral_aresetn:true|/processing_system7_0_FCLK_RESET0_N:true|",
+   "Clocking and Reset View_ScaleFactor":"0.494283",
+   "Clocking and Reset View_TopLeft":"-516,0",
+   "Default View_Layers":"/processing_system7_0_FCLK_CLK0:true|/c_counter_binary_0_Q:true|/rst_ps7_0_50M_peripheral_aresetn:true|/processing_system7_0_FCLK_RESET0_N:true|/rp_adc_capture_0_adc_clk_o:true|",
+   "Default View_ScaleFactor":"0.526187",
+   "Default View_TopLeft":"720,258",
+   "Display-IntfAXI3":"true",
+   "Display-IntfAXI4Lite":"true",
+   "Display-IntfAXIStream":"true",
+   "Display-IntfOthers":"true",
+   "Display-IntfTypeAXIMM":"true",
+   "Display-PortTypeClock":"true",
+   "Display-PortTypeData":"true",
+   "Display-PortTypeOthers":"true",
+   "Display-PortTypeReset":"true",
+   "ExpandedHierarchyInLayout":"",
+   "Interfaces View_Layers":"/processing_system7_0_FCLK_CLK0:false|/c_counter_binary_0_Q:false|/rst_ps7_0_50M_peripheral_aresetn:false|/processing_system7_0_FCLK_RESET0_N:false|/rp_adc_capture_0_adc_clk_o:false|",
+   "Interfaces View_ScaleFactor":"0.786711",
+   "Interfaces View_TopLeft":"-164,-153",
+   "Interrupt and AXI-4 Lite_Layers":"/processing_system7_0_FCLK_CLK0:false|/rp_adc_capture_0_adc_clk_o:false|/rst_ps7_0_50M_peripheral_aresetn:false|/processing_system7_0_FCLK_RESET0_N:false|",
+   "Interrupt and AXI-4 Lite_ScaleFactor":"0.936667",
+   "Interrupt and AXI-4 Lite_TopLeft":"-301,-4",
+   "No Loops_ScaleFactor":"0.389197",
+   "No Loops_TopLeft":"-686,3",
+   "Reduced Jogs_Layers":"/processing_system7_0_FCLK_CLK0:true|/c_counter_binary_0_Q:true|/rst_ps7_0_50M_peripheral_aresetn:true|/processing_system7_0_FCLK_RESET0_N:true|/rp_adc_capture_0_adc_clk_o:true|",
+   "Reduced Jogs_ScaleFactor":"0.406069",
+   "Reduced Jogs_TopLeft":"-611,2",
+   "guistr":"# # String gsaved with Nlview 7.8.0 2024-04-26 e1825d835c VDI=44 GEI=38 GUI=JA:21.0
+#  -string -flagsOSRD
+preplace port DDR -pg 1 -lvl 9 -x 2870 -y 620 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -lvl 9 -x 2870 -y 800 -defaultsOSRD
+preplace port port-id_adc_clk_p_i_0 -pg 1 -lvl 0 -x 0 -y 430 -defaultsOSRD
+preplace port port-id_adc_clk_n_i_0 -pg 1 -lvl 0 -x 0 -y 460 -defaultsOSRD
+preplace portBus led_o -pg 1 -lvl 9 -x 2870 -y 870 -defaultsOSRD
+preplace portBus adc_dat_p_i_0 -pg 1 -lvl 0 -x 0 -y 370 -defaultsOSRD
+preplace portBus adc_dat_n_i_0 -pg 1 -lvl 0 -x 0 -y 400 -defaultsOSRD
+preplace inst axis_bram_writer_0 -pg 1 -lvl 6 -x 2060 -y 140 -defaultsOSRD
+preplace inst blk_mem_gen_0 -pg 1 -lvl 8 -x 2750 -y 230 -defaultsOSRD
+preplace inst xlconstant_0 -pg 1 -lvl 7 -x 2410 -y 190 -defaultsOSRD
+preplace inst axi_bram_ctrl_0 -pg 1 -lvl 7 -x 2410 -y 900 -defaultsOSRD
+preplace inst processing_system7_0 -pg 1 -lvl 5 -x 1610 -y 870 -defaultsOSRD
+preplace inst axi_smc -pg 1 -lvl 6 -x 2060 -y 670 -defaultsOSRD
+preplace inst rst_ps7_0_50M -pg 1 -lvl 1 -x 200 -y 800 -defaultsOSRD
+preplace inst pps_generator_0 -pg 1 -lvl 4 -x 1220 -y 330 -defaultsOSRD
+preplace inst myip_0 -pg 1 -lvl 7 -x 2410 -y 710 -defaultsOSRD
+preplace inst led_blinker_0 -pg 1 -lvl 8 -x 2750 -y 990 -defaultsOSRD
+preplace inst rp_adc_capture_0 -pg 1 -lvl 3 -x 930 -y 430 -defaultsOSRD
+preplace inst adc_reset_sync_0 -pg 1 -lvl 2 -x 670 -y 610 -defaultsOSRD
+preplace inst vdif_packetizer_0 -pg 1 -lvl 5 -x 1610 -y 350 -defaultsOSRD
+preplace inst rp_axis_to_hls_bridge_0 -pg 1 -lvl 4 -x 1220 -y 480 -defaultsOSRD
+preplace inst xlconcat_bram_we4 -pg 1 -lvl 7 -x 2410 -y 320 -defaultsOSRD
+preplace inst ila_0 -pg 1 -lvl 8 -x 2750 -y 570 -defaultsOSRD
+preplace inst c_counter_binary_0 -pg 1 -lvl 4 -x 1220 -y 190 -defaultsOSRD
+preplace inst xlconstant_1 -pg 1 -lvl 4 -x 1220 -y 80 -defaultsOSRD
+preplace netloc Net 1 5 3 1880 440 NJ 440 2630J
+preplace netloc adc_clk_n_i_0_1 1 0 3 20J 450 NJ 450 NJ
+preplace netloc adc_clk_p_i_0_1 1 0 3 NJ 430 NJ 430 NJ
+preplace netloc adc_dat_n_i_0_1 1 0 3 NJ 400 NJ 400 770J
+preplace netloc adc_dat_p_i_0_1 1 0 3 NJ 370 NJ 370 800J
+preplace netloc adc_reset_sync_0_srst_n 1 2 6 790 330 1080 400 1340 470 1870J 480 N 480 2570
+preplace netloc axis_bram_writer_0_bram_addr 1 6 2 N 110 2650J
+preplace netloc axis_bram_writer_0_bram_data 1 6 2 N 130 2620J
+preplace netloc axis_bram_writer_0_bram_we 1 6 2 2280 430 2600J
+preplace netloc axis_bram_writer_0_packet_done 1 6 2 2250 570 NJ
+preplace netloc c_counter_binary_0_Q 1 4 4 1350 560 N 560 N 560 2580
+preplace netloc led_blinker_0_led1 1 8 1 2850J 870n
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 8 20 900 NJ 900 NJ 900 NJ 900 1390 970 1890 760 2270 820 2540J
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 6 30 980 NJ 980 NJ 980 NJ 980 NJ 980 1830
+preplace netloc rp_adc_capture_0_adc_clk_o 1 1 7 570 320 NJ 320 1100 260 1390 170 1830 10 NJ 10 2640
+preplace netloc rst_ps7_0_50M_peripheral_aresetn 1 1 7 570 690 NJ 690 NJ 690 NJ 690 1830 750 2280 1000 NJ
+preplace netloc vdif_packetizer_0_adc_in_TREADY 1 3 5 1110 20 1370 500 N 500 N 500 2560
+preplace netloc vdif_packetizer_0_packet_out_TDATA 1 5 3 1850 420 2270J 490 NJ
+preplace netloc vdif_packetizer_0_packet_out_TLAST 1 5 3 1860 430 2260J 470 2580J
+preplace netloc vdif_packetizer_0_packet_out_TVALID 1 5 3 1840 450 2230J 510 NJ
+preplace netloc xlconcat_bram_we4_dout 1 7 1 2540J 270n
+preplace netloc xlconstant_0_dout 1 7 1 2630J 190n
+preplace netloc xlconstant_1_dout 1 4 1 1380 80n
+preplace netloc myip_0_capture_rearm 1 5 3 1890 460 NJ 460 2540
+preplace netloc axi_bram_ctrl_0_BRAM_PORTA 1 7 1 2590 290n
+preplace netloc axi_smc_M00_AXI 1 6 1 2230 660n
+preplace netloc axi_smc_M01_AXI 1 6 1 N 680
+preplace netloc pps_generator_0_pps 1 4 1 1360 330n
+preplace netloc processing_system7_0_DDR 1 5 4 1850J 590 NJ 590 2550J 730 2850J
+preplace netloc processing_system7_0_FIXED_IO 1 5 4 1880J 800 NJ 800 NJ 800 NJ
+preplace netloc processing_system7_0_M_AXI_GP0 1 5 1 1870 650n
+preplace netloc rp_adc_capture_0_m_axis 1 3 1 1090 420n
+levelinfo -pg 1 0 200 670 930 1220 1610 2060 2410 2750 2870
+pagesize -pg 1 -db -bbox -sgen -180 0 2990 1060
+"
+}
+{
+   "da_axi4_cnt":"4",
+   "da_board_cnt":"1",
+   "da_bram_cntlr_cnt":"2",
+   "da_clkrst_cnt":"2",
+   "da_ps7_cnt":"1"
+}

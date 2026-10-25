@@ -1,0 +1,195 @@
+  **** HLS Build v2025.2 6295257
+INFO: [HLS 200-2005] Using work_dir C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer_hls/vdif_packetizer_hls/vdif_packetizer 
+INFO: [HLS 200-2176] Writing Vitis IDE component file C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer_hls/vdif_packetizer_hls/vdif_packetizer/vitis-comp.json
+INFO: [HLS 200-10] Creating and opening component 'C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer_hls/vdif_packetizer_hls/vdif_packetizer'.
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.amd.com/access/sources/dita/topic?Doc_Version=2025.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-2174] Applying component config ini file hls_config.cfg
+INFO: [HLS 200-1465] Applying config ini 'syn.file=../../vdif_packetizer/hls/adc_packer.cpp' from hls_config.cfg(8)
+INFO: [HLS 200-10] Adding design file 'C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer/hls/adc_packer.cpp' to the project
+INFO: [HLS 200-1465] Applying config ini 'syn.file=../../vdif_packetizer/hls/axis_types.h' from hls_config.cfg(9)
+INFO: [HLS 200-10] Adding design file 'C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer/hls/axis_types.h' to the project
+INFO: [HLS 200-1465] Applying config ini 'syn.file=../../vdif_packetizer/hls/header_generator.cpp' from hls_config.cfg(10)
+INFO: [HLS 200-10] Adding design file 'C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer/hls/header_generator.cpp' to the project
+INFO: [HLS 200-1465] Applying config ini 'syn.file=../../vdif_packetizer/hls/timestamp_engine.cpp' from hls_config.cfg(11)
+INFO: [HLS 200-10] Adding design file 'C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer/hls/timestamp_engine.cpp' to the project
+INFO: [HLS 200-1465] Applying config ini 'syn.file=../../vdif_packetizer/hls/top.cpp' from hls_config.cfg(12)
+INFO: [HLS 200-10] Adding design file 'C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer/hls/top.cpp' to the project
+INFO: [HLS 200-1465] Applying config ini 'syn.file=../../vdif_packetizer/hls/vdif_config.h' from hls_config.cfg(13)
+INFO: [HLS 200-10] Adding design file 'C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer/hls/vdif_config.h' to the project
+INFO: [HLS 200-1465] Applying config ini 'syn.file=../../vdif_packetizer/hls/vdif_framer.cpp' from hls_config.cfg(14)
+INFO: [HLS 200-10] Adding design file 'C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer/hls/vdif_framer.cpp' to the project
+INFO: [HLS 200-1465] Applying config ini 'tb.file=../../vdif_packetizer/tb/tb_top.cpp' from hls_config.cfg(15)
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer/tb/tb_top.cpp' to the project
+INFO: [HLS 200-1465] Applying config ini 'syn.top=vdif_packetizer' from hls_config.cfg(7)
+INFO: [HLS 200-1465] Applying config ini 'flow_target=vivado' from hls_config.cfg(4)
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.amd.com/access/sources/dita/topic?Doc_Version=2025.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1465] Applying config ini 'part=xc7z020clg400-1' from hls_config.cfg(1)
+INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-1465] Applying config ini 'cosim.trace_level=all' from hls_config.cfg(16)
+INFO: [HLS 200-1465] Applying config ini 'package.output.format=ip_catalog' from hls_config.cfg(5)
+INFO: [HLS 200-2176] Writing Vitis IDE component file C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer_hls/vdif_packetizer_hls/vdif_packetizer/vitis-comp.json
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 1 seconds. CPU system time: 1 seconds. Elapsed time: 7.257 seconds; current allocated memory: 142.277 MB.
+INFO: [HLS 200-2191] C-Synthesis will use clang-16 as the compiler
+INFO: [HLS 200-10] Analyzing design file 'C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer/hls/vdif_framer.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file 'C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer/hls/top.cpp' ... 
+WARNING: [HLS 214-111] Static scalars and arrays declared inside a dataflow region will be treated like local variables (C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer/hls/top.cpp:49:32)
+Resolution: For help on HLS 214-111 see docs.amd.com/access/sources/dita/topic?Doc_Version=2025.2%20English&url=ug1448-hls-guidance&resourceid=214-111.html
+WARNING: [HLS 200-471] Dataflow form checks found 1 issue(s) in file C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer/hls/top.cpp
+Resolution: For help on HLS 200-471 see docs.amd.com/access/sources/dita/topic?Doc_Version=2025.2%20English&url=ug1448-hls-guidance&resourceid=200-471.html
+INFO: [HLS 200-10] Analyzing design file 'C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer/hls/timestamp_engine.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file 'C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer/hls/header_generator.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file 'C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer/hls/adc_packer.cpp' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 1 seconds. CPU system time: 1 seconds. Elapsed time: 26.563 seconds; current allocated memory: 145.512 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 200-1995] There were 4,165 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details (C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer_hls/vdif_packetizer_hls/vdif_packetizer/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 337 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details (C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer_hls/vdif_packetizer_hls/vdif_packetizer/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 259 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details (C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer_hls/vdif_packetizer_hls/vdif_packetizer/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 244 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details (C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer_hls/vdif_packetizer_hls/vdif_packetizer/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 180 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details (C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer_hls/vdif_packetizer_hls/vdif_packetizer/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 180 instructions in the design after the 'Array/Struct (step 1)' phase of compilation. See the Design Size Report for more details (C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer_hls/vdif_packetizer_hls/vdif_packetizer/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 180 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details (C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer_hls/vdif_packetizer_hls/vdif_packetizer/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 180 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details (C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer_hls/vdif_packetizer_hls/vdif_packetizer/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 180 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details (C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer_hls/vdif_packetizer_hls/vdif_packetizer/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 264 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details (C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer_hls/vdif_packetizer_hls/vdif_packetizer/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 264 instructions in the design after the 'Performance (step 1)' phase of compilation. See the Design Size Report for more details (C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer_hls/vdif_packetizer_hls/vdif_packetizer/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 233 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details (C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer_hls/vdif_packetizer_hls/vdif_packetizer/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 195 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details (C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer_hls/vdif_packetizer_hls/vdif_packetizer/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 181 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details (C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer_hls/vdif_packetizer_hls/vdif_packetizer/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 165 instructions in the design after the 'HW Transforms (step 1)' phase of compilation. See the Design Size Report for more details (C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer_hls/vdif_packetizer_hls/vdif_packetizer/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 148 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details (C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer_hls/vdif_packetizer_hls/vdif_packetizer/hls/syn/report/csynth_design_size.rpt:2)
+WARNING: [HLS 214-273] In function 'ssdm_int<32, false>::ssdm_int(unsigned int)', INLINE (C:/AMDDesignTools/2025.2/Vitis/common/technology/autopilot\etc/ap_common.h:530:39) of a non dataflow function into a region with DATAFLOW (C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer/hls/top.cpp:42:1) may break the canonical form (C:/AMDDesignTools/2025.2/Vitis/common/technology/autopilot\etc/ap_common.h:530:0)
+WARNING: [HLS 214-273] In function 'ssdm_int<16, false>::ssdm_int(unsigned short)', INLINE (C:/AMDDesignTools/2025.2/Vitis/common/technology/autopilot\etc/ap_common.h:530:39) of a non dataflow function into a region with DATAFLOW (C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer/hls/top.cpp:42:1) may break the canonical form (C:/AMDDesignTools/2025.2/Vitis/common/technology/autopilot\etc/ap_common.h:530:0)
+WARNING: [HLS 214-273] In function '_ZN8ssdm_intILi10ELb0EEC2EDU10_', INLINE (C:/AMDDesignTools/2025.2/Vitis/common/technology/autopilot\etc/ap_common.h:530:39) of a non dataflow function into a region with DATAFLOW (C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer/hls/top.cpp:42:1) may break the canonical form (C:/AMDDesignTools/2025.2/Vitis/common/technology/autopilot\etc/ap_common.h:530:0)
+WARNING: [HLS 214-273] In function '_ZN8ssdm_intILi24ELb0EEC2EDU24_', INLINE (C:/AMDDesignTools/2025.2/Vitis/common/technology/autopilot\etc/ap_common.h:530:39) of a non dataflow function into a region with DATAFLOW (C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer/hls/top.cpp:42:1) may break the canonical form (C:/AMDDesignTools/2025.2/Vitis/common/technology/autopilot\etc/ap_common.h:530:0)
+WARNING: [HLS 214-273] In function '_ZN8ssdm_intILi5ELb0EEC2EDU5_', INLINE (C:/AMDDesignTools/2025.2/Vitis/common/technology/autopilot\etc/ap_common.h:530:39) of a non dataflow function into a region with DATAFLOW (C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer/hls/top.cpp:42:1) may break the canonical form (C:/AMDDesignTools/2025.2/Vitis/common/technology/autopilot\etc/ap_common.h:530:0)
+WARNING: [HLS 214-273] In function '_ZN8ssdm_intILi3ELb0EEC2EDU3_', INLINE (C:/AMDDesignTools/2025.2/Vitis/common/technology/autopilot\etc/ap_common.h:530:39) of a non dataflow function into a region with DATAFLOW (C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer/hls/top.cpp:42:1) may break the canonical form (C:/AMDDesignTools/2025.2/Vitis/common/technology/autopilot\etc/ap_common.h:530:0)
+WARNING: [HLS 214-273] In function '_ZN8ssdm_intILi6ELb0EEC2EDU6_', INLINE (C:/AMDDesignTools/2025.2/Vitis/common/technology/autopilot\etc/ap_common.h:530:39) of a non dataflow function into a region with DATAFLOW (C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer/hls/top.cpp:42:1) may break the canonical form (C:/AMDDesignTools/2025.2/Vitis/common/technology/autopilot\etc/ap_common.h:530:0)
+WARNING: [HLS 214-273] In function '_ZN8ssdm_intILi1ELb0EEC2EDU1_', INLINE (C:/AMDDesignTools/2025.2/Vitis/common/technology/autopilot\etc/ap_common.h:530:39) of a non dataflow function into a region with DATAFLOW (C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer/hls/top.cpp:42:1) may break the canonical form (C:/AMDDesignTools/2025.2/Vitis/common/technology/autopilot\etc/ap_common.h:530:0)
+INFO: [HLS 214-131] Inlining function 'timestamp_engine(ap_uint<32>&, ap_uint<32>&, bool, bool)' into 'void vdif_framer<8>(hls::stream<ap_uint<32>, 0>&, hls::stream<hls::axis<ap_uint<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, vdif_config_t const&, hls::stream<ap_uint<1>, 0>&)' (C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer/hls/vdif_framer.cpp:198:9)
+INFO: [HLS 214-131] Inlining function 'header_generator(vdif_config_t const&, ap_uint<32>, ap_uint<32>, ap_uint<8>, ap_uint<256>&)' into 'void vdif_framer<8>(hls::stream<ap_uint<32>, 0>&, hls::stream<hls::axis<ap_uint<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, vdif_config_t const&, hls::stream<ap_uint<1>, 0>&)' (C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer/hls/vdif_framer.cpp:123:5)
+INFO: [HLS 214-178] Inlining function 'hls::axis<ap_uint<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>::axis()' into 'void vdif_framer<8>(hls::stream<ap_uint<32>, 0>&, hls::stream<hls::axis<ap_uint<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, vdif_config_t const&, hls::stream<ap_uint<1>, 0>&)' (C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer/hls/vdif_framer.cpp:31:0)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 10.267 seconds; current allocated memory: 147.746 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.002 seconds; current allocated memory: 147.746 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.097 seconds; current allocated memory: 152.090 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+WARNING: [SYNCHK 200-23] C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer/hls/vdif_framer.cpp:137: variable-indexed range selection may cause suboptimal QoR.
+INFO: [SYNCHK 200-10] 0 error(s), 1 warning(s).
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.058 seconds; current allocated memory: 154.801 MB.
+INFO: [XFORM 203-712] Applying dataflow to function 'vdif_packetizer_core<8>' (C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer/hls/top.cpp:42:1), detected/extracted 2 process function(s): 
+	 'adc_packer<8>'
+	 'vdif_framer<8>'.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.112 seconds; current allocated memory: 177.082 MB.
+WARNING: [HLS 200-1614] Cosimulation may deadlock if process vdif_framer<8> has a streamed top-level array input and has predecessor processes. If a deadlock occurs, please consider converting the streamed array into an hls::stream
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.132 seconds; current allocated memory: 197.453 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'vdif_packetizer' ...
+WARNING: [SYN 201-103] Legalizing function name 'adc_packer<8>' to 'adc_packer_8_s'.
+WARNING: [SYN 201-103] Legalizing function name 'vdif_framer<8>' to 'vdif_framer_8_s'.
+WARNING: [SYN 201-103] Legalizing function name 'vdif_packetizer_core<8>' to 'vdif_packetizer_core_8_s'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'adc_packer_8_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'adc_packer<8>'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 2, function 'adc_packer<8>'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.247 seconds; current allocated memory: 200.980 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.027 seconds; current allocated memory: 202.023 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'vdif_framer_8_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'vdif_framer<8>'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 3, function 'vdif_framer<8>'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.044 seconds; current allocated memory: 202.246 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 1.27 seconds; current allocated memory: 202.266 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'vdif_packetizer_core_8_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.032 seconds; current allocated memory: 202.352 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.014 seconds; current allocated memory: 202.371 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'vdif_packetizer' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.016 seconds; current allocated memory: 202.379 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.013 seconds; current allocated memory: 202.379 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'adc_packer_8_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Register 'sample_count' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'packed_data' is power-on initialization.
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'adc_packer_8_s' pipeline 'adc_packer<8>' pipeline type 'function pipeline'
+INFO: [RTGEN 206-100] Generating core module 'partset_32ns_32ns_8ns_5ns_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'adc_packer_8_s'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.058 seconds; current allocated memory: 204.430 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'vdif_framer_8_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Register 'pps_pending' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'state' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'header_index' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'payload_count' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'frame' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'seconds' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'header' is power-on initialization.
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'vdif_framer_8_s' pipeline 'vdif_framer<8>' pipeline type 'function pipeline'
+INFO: [RTGEN 206-100] Generating core module 'partselect_32ns_256ns_8ns_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'vdif_framer_8_s'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.154 seconds; current allocated memory: 206.156 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'vdif_packetizer_core_8_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'vdif_packetizer_core_8_s'.
+INFO: [RTMG 210-285] Implementing FIFO 'packed_fifo_U(vdif_packetizer_fifo_w32_d1024_A)' using Vivado Default RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_vdif_framer_8_U0_U(vdif_packetizer_start_for_vdif_framer_8_U0)' using Shift Registers.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.192 seconds; current allocated memory: 208.176 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'vdif_packetizer' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'vdif_packetizer/adc_in' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'vdif_packetizer/pps_in' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'vdif_packetizer/packet_out_V_data_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'vdif_packetizer/packet_out_V_keep_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'vdif_packetizer/packet_out_V_strb_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'vdif_packetizer/packet_out_V_last_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on function 'vdif_packetizer' to 'ap_ctrl_none'.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'vdif_packetizer'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.183 seconds; current allocated memory: 208.641 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.688 seconds; current allocated memory: 212.301 MB.
+INFO: [HLS 200-2225] Wrote inferred directives to file C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer_hls/vdif_packetizer_hls/vdif_packetizer/hls/syn/inferred_directives.ini
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.883 seconds; current allocated memory: 214.316 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for vdif_packetizer.
+INFO: [VLOG 209-307] Generating Verilog RTL for vdif_packetizer.
+INFO: [HLS 200-789] **** Estimated Fmax: 188.80 MHz
+INFO: [HLS 200-112] Total CPU user time: 3 seconds. Total CPU system time: 2 seconds. Total elapsed time: 50.057 seconds; peak allocated memory: 214.371 MB.
+INFO: [v++ 60-791] Total elapsed time: 0h 0m 53s

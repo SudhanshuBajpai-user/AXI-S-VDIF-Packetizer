@@ -1,0 +1,4 @@
+grp_vdif_packetizer_core_8_s_fu_64,adc_packer_8_U0,,status1.csv
+grp_vdif_packetizer_core_8_s_fu_64,vdif_framer_8_U0,,status2.csv
+,AESL_inst_vdif_packetizer,,module_status1.csv
+,grp_vdif_packetizer_core_8_s_fu_64,,module_status2.csv

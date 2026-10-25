@@ -1,0 +1,232 @@
+<ENTRY>
+{
+ "thisFile": "C:/Users\\SUDHANSHU_BAJPAI\\Projects\\vdif_packetizer_hls\\vdif_packetizer_hls\\vdif_packetizer\\vdif_packetizer.hlsrun_cosim_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "10/15/26 17:14:26",
+ "timestampMillis": "1792064666647",
+ "buildStep": {
+  "cmdId": "55448bbf-c965-4818-aa08-671d2a01f4a2",
+  "name": "vitis-run",
+  "logFile": "C:/Users\\SUDHANSHU_BAJPAI\\Projects\\vdif_packetizer_hls\\vdif_packetizer_hls\\vdif_packetizer\\logs\\vdif_packetizer.steps.log",
+  "commandLine": "C:/AMDDesignTools/2025.2/Vitis/bin/unwrapped/win64.o/vitis-run.exe  --mode hls --cosim --config C:\\Users\\SUDHANSHU_BAJPAI\\Projects\\vdif_packetizer_hls\\vdif_packetizer_hls\\hls_config.cfg --work_dir vdif_packetizer ",
+  "args": [
+   "--mode",
+   "hls",
+   "--cosim",
+   "--config",
+   "C:\\Users\\SUDHANSHU_BAJPAI\\Projects\\vdif_packetizer_hls\\vdif_packetizer_hls\\hls_config.cfg",
+   "--work_dir",
+   "vdif_packetizer"
+  ],
+  "iniFiles": [],
+  "cwd": "C:\\Users\\SUDHANSHU_BAJPAI\\Projects\\vdif_packetizer_hls\\vdif_packetizer_hls"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "10/15/26 17:14:26",
+ "timestampMillis": "1792064666649",
+ "status": {
+  "cmdId": "55448bbf-c965-4818-aa08-671d2a01f4a2",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "10/15/26 17:14:32",
+ "timestampMillis": "1792064672600",
+ "buildSummary": {
+  "hardwarePlatform": "",
+  "hardwareDsa": "",
+  "platformDirectory": "",
+  "runtime": "",
+  "systemConfig": "",
+  "flow": "BF_RUN",
+  "target": "TT_HLS_RTL_COSIM",
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "vdif_packetizer",
+     "file": "",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "C:/Users\\SUDHANSHU_BAJPAI\\Projects\\vdif_packetizer\\hls\\adc_packer.cpp",
+     "C:/Users\\SUDHANSHU_BAJPAI\\Projects\\vdif_packetizer\\hls\\axis_types.h",
+     "C:/Users\\SUDHANSHU_BAJPAI\\Projects\\vdif_packetizer\\hls\\header_generator.cpp",
+     "C:/Users\\SUDHANSHU_BAJPAI\\Projects\\vdif_packetizer\\hls\\timestamp_engine.cpp",
+     "C:/Users\\SUDHANSHU_BAJPAI\\Projects\\vdif_packetizer\\hls\\top.cpp",
+     "C:/Users\\SUDHANSHU_BAJPAI\\Projects\\vdif_packetizer\\hls\\vdif_config.h",
+     "C:/Users\\SUDHANSHU_BAJPAI\\Projects\\vdif_packetizer\\hls\\vdif_framer.cpp"
+    ],
+    "psSources": [],
+    "cuNames": [],
+    "type": "HLS",
+    "frequency": 0,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": "2025.2"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "10/15/26 17:14:32",
+ "timestampMillis": "1792064672602",
+ "buildStep": {
+  "cmdId": "10b2a2d8-0893-4df2-8e75-cbf81dceaa10",
+  "name": "",
+  "logFile": "C:/Users\\SUDHANSHU_BAJPAI\\Projects\\vdif_packetizer_hls\\vdif_packetizer_hls\\vdif_packetizer\\hls\\hls.log",
+  "commandLine": "",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "C:\\Users\\SUDHANSHU_BAJPAI\\Projects\\vdif_packetizer_hls\\vdif_packetizer_hls"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "10/15/26 17:14:32",
+ "timestampMillis": "1792064672603",
+ "status": {
+  "cmdId": "10b2a2d8-0893-4df2-8e75-cbf81dceaa10",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "10/15/26 17:14:32",
+ "timestampMillis": "1792064672603",
+ "report": {
+  "path": "C:/Users\\SUDHANSHU_BAJPAI\\Projects\\vdif_packetizer_hls\\vdif_packetizer_hls\\vdif_packetizer\\hls\\sim\\report\\vdif_packetizer_cosim.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "HLS_COSIMULATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "10/15/26 17:14:32",
+ "timestampMillis": "1792064672604",
+ "report": {
+  "path": "C:/Users\\SUDHANSHU_BAJPAI\\Projects\\vdif_packetizer_hls\\vdif_packetizer_hls\\vdif_packetizer\\hls",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "HLS_DATAFLOW",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "10/15/26 17:14:32",
+ "timestampMillis": "1792064672605",
+ "report": {
+  "path": "C:/Users\\SUDHANSHU_BAJPAI\\Projects\\vdif_packetizer_hls\\vdif_packetizer_hls\\vdif_packetizer\\hls",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "HLS_FUNCTION_CALL_GRAPH_COSIM",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "10/15/26 17:14:32",
+ "timestampMillis": "1792064672605",
+ "report": {
+  "path": "C:/Users\\SUDHANSHU_BAJPAI\\Projects\\vdif_packetizer_hls\\vdif_packetizer_hls\\vdif_packetizer\\hls",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "HLS_TIMELINE_TRACE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "10/15/26 17:14:32",
+ "timestampMillis": "1792064672606",
+ "report": {
+  "path": "C:/Users\\SUDHANSHU_BAJPAI\\Projects\\vdif_packetizer_hls\\vdif_packetizer_hls\\vdif_packetizer\\hls",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "HLS_WAVE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "10/15/26 17:15:32",
+ "timestampMillis": "1792064732481",
+ "status": {
+  "cmdId": "10b2a2d8-0893-4df2-8e75-cbf81dceaa10",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "10/15/26 17:15:32",
+ "timestampMillis": "1792064732612",
+ "status": {
+  "cmdId": "55448bbf-c965-4818-aa08-671d2a01f4a2",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "10/15/26 17:15:32",
+ "timestampMillis": "1792064732614",
+ "report": {
+  "path": "",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "10/15/26 17:15:32",
+ "timestampMillis": "1792064732615",
+ "report": {
+  "path": "",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>

@@ -1,0 +1,149 @@
+
+
+================================================================
+== Vitis HLS Report for 'vdif_packetizer_core_8_s'
+================================================================
+* Date:           Thu Oct 15 10:24:31 2026
+
+* Version:        2025.2 (Build 6295257 on Nov 14 2025)
+* Project:        vdif_packetizer
+* Solution:       hls (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  5.297 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+-----+-----+----------+
+    |  Latency (cycles) |   Latency (absolute)  |  Interval | Pipeline |
+    |   min   |   max   |    min    |    max    | min | max |   Type   |
+    +---------+---------+-----------+-----------+-----+-----+----------+
+    |        4|        4|  40.000 ns|  40.000 ns|    1|    1|  dataflow|
+    +---------+---------+-----------+-----------+-----+-----+----------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 5
+* Pipeline : 0
+* Dataflow Pipeline: 1
+  DF-Pipeline-0: Size = 5, States = { 1 2 3 4 5 }
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 0.51>
+ST_1 : Operation 6 [2/2] (0.51ns)   --->   "%call_ln121 = call void @adc_packer<8>, i8 %adc_in, i5 %sample_count, i32 %packed_data, i32 %packed_fifo" [C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer/hls/top.cpp:121]   --->   Operation 6 'call' 'call_ln121' <Predicate = true> <Delay = 0.51> <CoreType = "Generic">   --->   Generic Core
+
+State 2 <SV = 1> <Delay = 0.00>
+ST_2 : Operation 7 [1/2] (0.00ns)   --->   "%call_ln121 = call void @adc_packer<8>, i8 %adc_in, i5 %sample_count, i32 %packed_data, i32 %packed_fifo" [C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer/hls/top.cpp:121]   --->   Operation 7 'call' 'call_ln121' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Generic Core
+
+State 3 <SV = 2> <Delay = 0.51>
+ST_3 : Operation 8 [3/3] (0.51ns)   --->   "%call_ln132 = call void @vdif_framer<8>, i32 %packet_out_V_data_V, i4 %packet_out_V_keep_V, i4 %packet_out_V_strb_V, i1 %packet_out_V_last_V, i8 %pps_in, i1 %pps_pending, i2 %state, i4 %header_index, i16 %payload_count, i32 %frame, i32 %packed_fifo, i32 %seconds, i123 %header" [C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer/hls/top.cpp:132]   --->   Operation 8 'call' 'call_ln132' <Predicate = true> <Delay = 0.51> <CoreType = "Generic">   --->   Generic Core
+
+State 4 <SV = 3> <Delay = 5.29>
+ST_4 : Operation 9 [2/3] (5.29ns)   --->   "%call_ln132 = call void @vdif_framer<8>, i32 %packet_out_V_data_V, i4 %packet_out_V_keep_V, i4 %packet_out_V_strb_V, i1 %packet_out_V_last_V, i8 %pps_in, i1 %pps_pending, i2 %state, i4 %header_index, i16 %payload_count, i32 %frame, i32 %packed_fifo, i32 %seconds, i123 %header" [C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer/hls/top.cpp:132]   --->   Operation 9 'call' 'call_ln132' <Predicate = true> <Delay = 5.29> <CoreType = "Generic">   --->   Generic Core
+
+State 5 <SV = 4> <Delay = 4.02>
+ST_5 : Operation 10 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %packed_fifo, void @empty_2, i32 0, i32 0, void @empty_1, i32 0, i32 0, void @empty_1, void @empty_1, void @empty_1, i32 0, i32 0, i32 0, i32 0, void @empty_1, void @empty_1, i32 4294967295, i32 0, i32 0, i32 0"   --->   Operation 10 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 11 [1/1] (0.00ns)   --->   "%empty = specchannel i32 @_ssdm_op_SpecChannel, void @packed_fifo_str, i32 1, void @p_str, void @p_str, i32 1024, i32 1024, i32 %packed_fifo, i32 %packed_fifo"   --->   Operation 11 'specchannel' 'empty' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 12 [1/1] (0.00ns)   --->   "%specdataflowpipeline_ln42 = specdataflowpipeline void @_ssdm_op_SpecDataflowPipeline, i32 4294967295, i32 0, void @empty_1" [C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer/hls/top.cpp:42]   --->   Operation 12 'specdataflowpipeline' 'specdataflowpipeline_ln42' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 13 [1/1] (0.00ns)   --->   "%specaxissidechannel_ln0 = specaxissidechannel void @_ssdm_op_SpecAXISSideChannel, i32 %packet_out_V_data_V, i4 %packet_out_V_keep_V, i4 %packet_out_V_strb_V, i1 0, i1 %packet_out_V_last_V, i1 0, i1 0, void @empty_3"   --->   Operation 13 'specaxissidechannel' 'specaxissidechannel_ln0' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 14 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %packet_out_V_last_V, i4 %packet_out_V_strb_V, i4 %packet_out_V_keep_V, i32 %packet_out_V_data_V, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_1, void @empty_1, void @empty_1, i32 0, i32 0, i32 0, i32 0, void @empty_1, void @empty_1, i32 4294967295, i32 0, i32 0, i32 0"   --->   Operation 14 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 15 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %pps_in, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_1, void @empty_1, void @empty_1, i32 0, i32 0, i32 0, i32 0, void @empty_1, void @empty_1, i32 4294967295, i32 0, i32 0, i32 0"   --->   Operation 15 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 16 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %adc_in, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_1, void @empty_1, void @empty_1, i32 0, i32 0, i32 0, i32 0, void @empty_1, void @empty_1, i32 4294967295, i32 0, i32 0, i32 0"   --->   Operation 16 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 17 [1/3] (4.02ns)   --->   "%call_ln132 = call void @vdif_framer<8>, i32 %packet_out_V_data_V, i4 %packet_out_V_keep_V, i4 %packet_out_V_strb_V, i1 %packet_out_V_last_V, i8 %pps_in, i1 %pps_pending, i2 %state, i4 %header_index, i16 %payload_count, i32 %frame, i32 %packed_fifo, i32 %seconds, i123 %header" [C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer/hls/top.cpp:132]   --->   Operation 17 'call' 'call_ln132' <Predicate = true> <Delay = 4.02> <CoreType = "Generic">   --->   Generic Core
+ST_5 : Operation 18 [1/1] (0.00ns)   --->   "%ret_ln138 = ret" [C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer/hls/top.cpp:138]   --->   Operation 18 'ret' 'ret_ln138' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10.000ns, clock uncertainty: 2.700ns.
+
+ <State 1>: 0.518ns
+The critical path consists of the following:
+	'call' operation ('call_ln121', C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer/hls/top.cpp:121) to 'adc_packer<8>' [24]  (0.518 ns)
+
+ <State 2>: 0.000ns
+The critical path consists of the following:
+
+ <State 3>: 0.518ns
+The critical path consists of the following:
+	'call' operation ('call_ln132', C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer/hls/top.cpp:132) to 'vdif_framer<8>' [25]  (0.518 ns)
+
+ <State 4>: 5.297ns
+The critical path consists of the following:
+	'call' operation ('call_ln132', C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer/hls/top.cpp:132) to 'vdif_framer<8>' [25]  (5.297 ns)
+
+ <State 5>: 4.024ns
+The critical path consists of the following:
+	'call' operation ('call_ln132', C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer/hls/top.cpp:132) to 'vdif_framer<8>' [25]  (4.024 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

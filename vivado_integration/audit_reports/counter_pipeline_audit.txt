@@ -1,0 +1,114 @@
+COUNTER PIPELINE SYSTEM AUDIT
+Project: project_1
+Root: C:/Users/SUDHANSHU_BAJPAI/Projects/ip/project_1
+Block design: C:/Users/SUDHANSHU_BAJPAI/Projects/ip/project_1/project_1.srcs/sources_1/bd/design_1/design_1.bd
+Started: Thu Oct 22 22:24:37 +0530 2026
+
+PASS: Opened block design design_1
+PASS: Counter test source exists (/c_counter_binary_0)
+PASS: VDIF HLS packetizer exists (/vdif_packetizer_0)
+PASS: AXI BRAM writer exists (/axis_bram_writer_0)
+PASS: Block RAM exists (/blk_mem_gen_0)
+PASS: AXI BRAM controller exists (/axi_bram_ctrl_0)
+PASS: Status/re-arm control IP exists (/myip_0)
+PASS: TVALID constant source exists (/xlconstant_1)
+PASS: Counter output width = 8
+PASS: Counter mode = UP
+PASS: Counter increment = 1
+PASS: Counter restrict-count disabled = false
+PASS: Counter Q -> HLS adc_in_TDATA — shared net c_counter_binary_0_Q
+PASS: Constant TVALID -> HLS adc_in_TVALID — shared net xlconstant_1_dout
+PASS: HLS adc_in_TREADY -> counter CE — shared net vdif_packetizer_0_adc_in_TREADY
+PASS: ADC clock -> counter CLK — shared net rp_adc_capture_0_adc_clk_o
+PASS: ADC clock -> HLS ap_clk — shared net rp_adc_capture_0_adc_clk_o
+PASS: HLS packet data -> writer data — shared net vdif_packetizer_0_packet_out_TDATA
+PASS: HLS packet valid -> writer valid — shared net vdif_packetizer_0_packet_out_TVALID
+PASS: HLS TLAST -> writer TLAST — shared net vdif_packetizer_0_packet_out_TLAST
+PASS: Writer ready -> HLS packet ready — shared net Net
+PASS: Writer packet_done -> control/status IP — shared net axis_bram_writer_0_packet_done
+PASS: Control IP capture_rearm -> writer rearm_req — shared net myip_0_capture_rearm
+INFO: PINMAP bram_addr -> axis_bram_writer_0_bram_addr
+INFO: PINMAP bram_data -> axis_bram_writer_0_bram_data
+INFO: PINMAP bram_we -> axis_bram_writer_0_bram_we
+INFO: PINMAP packet_done -> axis_bram_writer_0_packet_done
+INFO: PINMAP rearm_req -> myip_0_capture_rearm
+INFO: PINMAP s_axis_tdata -> vdif_packetizer_0_packet_out_TDATA
+INFO: PINMAP s_axis_tlast -> vdif_packetizer_0_packet_out_TLAST
+INFO: PINMAP s_axis_tready -> Net
+INFO: PINMAP s_axis_tvalid -> vdif_packetizer_0_packet_out_TVALID
+INFO: PINMAP addra -> axis_bram_writer_0_bram_addr
+INFO: PINMAP addrb -> UNCONNECTED
+INFO: PINMAP clka -> rp_adc_capture_0_adc_clk_o
+INFO: PINMAP clkb -> UNCONNECTED
+INFO: PINMAP dina -> axis_bram_writer_0_bram_data
+INFO: PINMAP dinb -> UNCONNECTED
+INFO: PINMAP douta -> UNCONNECTED
+INFO: PINMAP doutb -> UNCONNECTED
+INFO: PINMAP ena -> xlconstant_0_dout
+INFO: PINMAP enb -> UNCONNECTED
+INFO: PINMAP wea -> xlconcat_bram_we4_dout
+INFO: PINMAP web -> UNCONNECTED
+INFO: PINMAP bram_addr_a -> UNCONNECTED
+INFO: PINMAP bram_clk_a -> UNCONNECTED
+INFO: PINMAP bram_en_a -> UNCONNECTED
+INFO: PINMAP bram_rddata_a -> UNCONNECTED
+INFO: PINMAP bram_rst_a -> UNCONNECTED
+INFO: PINMAP bram_we_a -> UNCONNECTED
+INFO: PINMAP bram_wrdata_a -> UNCONNECTED
+INFO: PINMAP s_axi_aclk -> processing_system7_0_FCLK_CLK0
+INFO: PINMAP s_axi_araddr -> UNCONNECTED
+INFO: PINMAP s_axi_arburst -> UNCONNECTED
+INFO: PINMAP s_axi_arcache -> UNCONNECTED
+INFO: PINMAP s_axi_aresetn -> rst_ps7_0_50M_peripheral_aresetn
+INFO: PINMAP s_axi_arlen -> UNCONNECTED
+INFO: PINMAP s_axi_arlock -> UNCONNECTED
+INFO: PINMAP s_axi_arprot -> UNCONNECTED
+INFO: PINMAP s_axi_arready -> UNCONNECTED
+INFO: PINMAP s_axi_arsize -> UNCONNECTED
+INFO: PINMAP s_axi_arvalid -> UNCONNECTED
+INFO: PINMAP s_axi_awaddr -> UNCONNECTED
+INFO: PINMAP s_axi_awburst -> UNCONNECTED
+INFO: PINMAP s_axi_awcache -> UNCONNECTED
+INFO: PINMAP s_axi_awlen -> UNCONNECTED
+INFO: PINMAP s_axi_awlock -> UNCONNECTED
+INFO: PINMAP s_axi_awprot -> UNCONNECTED
+INFO: PINMAP s_axi_awready -> UNCONNECTED
+INFO: PINMAP s_axi_awsize -> UNCONNECTED
+INFO: PINMAP s_axi_awvalid -> UNCONNECTED
+INFO: PINMAP s_axi_bready -> UNCONNECTED
+INFO: PINMAP s_axi_bresp -> UNCONNECTED
+INFO: PINMAP s_axi_bvalid -> UNCONNECTED
+INFO: PINMAP s_axi_rdata -> UNCONNECTED
+INFO: PINMAP s_axi_rlast -> UNCONNECTED
+INFO: PINMAP s_axi_rready -> UNCONNECTED
+INFO: PINMAP s_axi_rresp -> UNCONNECTED
+INFO: PINMAP s_axi_rvalid -> UNCONNECTED
+INFO: PINMAP s_axi_wdata -> UNCONNECTED
+INFO: PINMAP s_axi_wlast -> UNCONNECTED
+INFO: PINMAP s_axi_wready -> UNCONNECTED
+INFO: PINMAP s_axi_wstrb -> UNCONNECTED
+INFO: PINMAP s_axi_wvalid -> UNCONNECTED
+INFO: ADC AXI bridge exists but is outside the intended counter test path; leaving it disconnected is intentional for this test.
+INFO: PINMAP m_axis_tdata -> UNCONNECTED
+INFO: PINMAP m_axis_tready -> UNCONNECTED
+INFO: PINMAP m_axis_tvalid -> UNCONNECTED
+INFO: PINMAP s_axis_tdata -> UNCONNECTED
+INFO: PINMAP s_axis_tready -> UNCONNECTED
+INFO: PINMAP s_axis_tvalid -> UNCONNECTED
+INFO: /vdif_packetizer_0/pps_in_TDATA is unconnected. This can leave PPS-derived seconds/timestamps static; it is not required to exercise the counter payload path.
+INFO: /vdif_packetizer_0/pps_in_TVALID is unconnected. This can leave PPS-derived seconds/timestamps static; it is not required to exercise the counter payload path.
+INFO: /vdif_packetizer_0/pps_in_TREADY is unconnected. This can leave PPS-derived seconds/timestamps static; it is not required to exercise the counter payload path.
+INFO: validate_bd_design command completed; inspect its warnings in the Vivado console.
+INFO: IP status report written: C:/Users/SUDHANSHU_BAJPAI/Projects/ip/project_1/audit_reports/ip_status.rpt
+INFO: impl_1 status: write_bitstream Complete!
+PASS: timing report generated
+PASS: drc report generated
+PASS: cdc report generated
+PASS: utilization report generated
+PASS: bus_skew report generated
+PASS: check_timing report generated
+INFO: PASS=29 WARN=0 FAIL=0 INFO=74
+INFO: Review detailed reports in C:/Users/SUDHANSHU_BAJPAI/Projects/ip/project_1/audit_reports. A PASS from this script checks structure/connectivity only; it does not prove that the physical board was programmed or that UDP arrived correctly.
+
+Finished: Thu Oct 22 22:24:57 +0530 2026
+SUMMARY: PASS=29 WARN=0 FAIL=0 INFO=74

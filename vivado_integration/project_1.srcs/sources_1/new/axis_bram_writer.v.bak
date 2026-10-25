@@ -1,0 +1,78 @@
+`timescale 1ns / 1ps
+
+module axis_bram_writer #(
+    parameter integer FRAME_WORDS = 264
+)(
+    input  wire        clk,
+    input  wire        rst_n,
+
+    // AXI4-Stream input
+    input  wire [31:0] s_axis_tdata,
+    input  wire        s_axis_tvalid,
+    input  wire        s_axis_tlast,
+    output wire        s_axis_tready,
+
+    // BRAM write interface
+    output reg  [31:0] bram_addr,
+    output reg  [31:0] bram_data,
+    output reg         bram_we,
+
+    // Status
+    output reg         packet_done
+);
+
+    reg [8:0] write_addr;
+    reg       capture_done;
+
+    // Accept data until one complete frame has been stored.
+    assign s_axis_tready = rst_n && !capture_done;
+
+    always @(posedge clk) begin
+
+        if (!rst_n) begin
+            write_addr   <= 9'd0;
+            capture_done <= 1'b0;
+
+            bram_addr    <= 32'd0;
+            bram_data    <= 32'd0;
+            bram_we      <= 1'b0;
+
+            packet_done  <= 1'b0;
+        end
+        else begin
+
+            // BRAM write-enable is a one-cycle pulse.
+            bram_we <= 1'b0;
+
+            if (!capture_done && s_axis_tvalid && s_axis_tready) begin
+
+                // Write current AXIS word.
+                bram_addr <= {21'd0, write_addr, 2'b00};
+                bram_data <= s_axis_tdata;
+                bram_we   <= 1'b1;
+
+                // End of VDIF frame.
+                if (s_axis_tlast) begin
+
+                    packet_done  <= 1'b1;
+                    capture_done <= 1'b1;
+
+                end
+                else if (write_addr == FRAME_WORDS - 1) begin
+
+                    // Safety: don't allow an over-length frame
+                    // to run past the allocated frame buffer.
+                    packet_done  <= 1'b1;
+                    capture_done <= 1'b1;
+
+                end
+                else begin
+
+                    write_addr <= write_addr + 9'd1;
+
+                end
+            end
+        end
+    end
+
+endmodule

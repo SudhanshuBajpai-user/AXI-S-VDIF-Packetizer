@@ -1,0 +1,2 @@
+Static scalars and arrays declared inside a dataflow region will be treated like local variables
+1 warning generated.

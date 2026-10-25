@@ -1,0 +1,8 @@
+---
+MainSourceFile:  'C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer_hls/vdif_packetizer_hls/vdif_packetizer/hls/.autopilot/db/top.pp.0.cpp'
+Diagnostics:
+  - DiagnosticName:  clang-diagnostic-warning
+    Message:         '[xlx-df-check-8] Static scalars and arrays declared inside a dataflow region will be treated like local variables'
+    FileOffset:      '49:32'
+    FilePath:        'C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer/hls/top.cpp'
+...

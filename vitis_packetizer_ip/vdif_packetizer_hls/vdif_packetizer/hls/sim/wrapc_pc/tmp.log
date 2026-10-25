@@ -1,0 +1,17 @@
+PPS pulse at cycle 0
+TLAST detected : Frame 1 at output word 263
+TLAST detected : Frame 2 at output word 527
+TLAST detected : Frame 3 at output word 791
+TLAST detected : Frame 4 at output word 1055
+PPS pulse at cycle 4200
+TLAST detected : Frame 5 at output word 1319
+TLAST detected : Frame 6 at output word 1583
+All 6 VDIF frames received at cycle 6143
+
+========== VDIF MULTI-PPS TEST SUMMARY ==========
+ADC Samples      : 6144
+Frames Generated : 6
+Output Words     : 1584
+Expected Words   : 1584
+MULTI-PPS DATA AND FRAMING TEST PASSED
+INFO [HLS SIM]: The maximum depth reached by any hls::stream() instance in the design is 1

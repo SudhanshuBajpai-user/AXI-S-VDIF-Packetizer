@@ -1,0 +1,162 @@
+<ENTRY>
+{
+ "thisFile": "C:/Users\\SUDHANSHU_BAJPAI\\Projects\\vdif_packetizer_hls\\vdif_packetizer_hls\\vdif_packetizer\\vdif_packetizer.hlsrun_csim_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "10/15/26 10:21:51",
+ "timestampMillis": "1792039911860",
+ "buildStep": {
+  "cmdId": "b434bc43-470b-4477-8fca-fd916dc6092f",
+  "name": "vitis-run",
+  "logFile": "C:/Users\\SUDHANSHU_BAJPAI\\Projects\\vdif_packetizer_hls\\vdif_packetizer_hls\\vdif_packetizer\\logs\\vdif_packetizer.steps.log",
+  "commandLine": "C:/AMDDesignTools/2025.2/Vitis/bin/unwrapped/win64.o/vitis-run.exe  --mode hls --csim --config C:\\Users\\SUDHANSHU_BAJPAI\\Projects\\vdif_packetizer_hls\\vdif_packetizer_hls\\hls_config.cfg --work_dir vdif_packetizer ",
+  "args": [
+   "--mode",
+   "hls",
+   "--csim",
+   "--config",
+   "C:\\Users\\SUDHANSHU_BAJPAI\\Projects\\vdif_packetizer_hls\\vdif_packetizer_hls\\hls_config.cfg",
+   "--work_dir",
+   "vdif_packetizer"
+  ],
+  "iniFiles": [],
+  "cwd": "C:\\Users\\SUDHANSHU_BAJPAI\\Projects\\vdif_packetizer_hls\\vdif_packetizer_hls"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "10/15/26 10:21:51",
+ "timestampMillis": "1792039911861",
+ "status": {
+  "cmdId": "b434bc43-470b-4477-8fca-fd916dc6092f",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "10/15/26 10:21:54",
+ "timestampMillis": "1792039914943",
+ "buildSummary": {
+  "hardwarePlatform": "",
+  "hardwareDsa": "",
+  "platformDirectory": "",
+  "runtime": "",
+  "systemConfig": "",
+  "flow": "BF_RUN",
+  "target": "TT_HLS_C_SIM",
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "vdif_packetizer",
+     "file": "",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "C:/Users\\SUDHANSHU_BAJPAI\\Projects\\vdif_packetizer\\hls\\adc_packer.cpp",
+     "C:/Users\\SUDHANSHU_BAJPAI\\Projects\\vdif_packetizer\\hls\\axis_types.h",
+     "C:/Users\\SUDHANSHU_BAJPAI\\Projects\\vdif_packetizer\\hls\\header_generator.cpp",
+     "C:/Users\\SUDHANSHU_BAJPAI\\Projects\\vdif_packetizer\\hls\\timestamp_engine.cpp",
+     "C:/Users\\SUDHANSHU_BAJPAI\\Projects\\vdif_packetizer\\hls\\top.cpp",
+     "C:/Users\\SUDHANSHU_BAJPAI\\Projects\\vdif_packetizer\\hls\\vdif_config.h",
+     "C:/Users\\SUDHANSHU_BAJPAI\\Projects\\vdif_packetizer\\hls\\vdif_framer.cpp"
+    ],
+    "psSources": [],
+    "cuNames": [],
+    "type": "HLS",
+    "frequency": 0,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": "2025.2"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "10/15/26 10:21:54",
+ "timestampMillis": "1792039914945",
+ "buildStep": {
+  "cmdId": "6a6fdea8-a1c4-42cd-91a9-7160430a2eca",
+  "name": "",
+  "logFile": "C:/Users\\SUDHANSHU_BAJPAI\\Projects\\vdif_packetizer_hls\\vdif_packetizer_hls\\vdif_packetizer\\hls\\hls.log",
+  "commandLine": "",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "C:\\Users\\SUDHANSHU_BAJPAI\\Projects\\vdif_packetizer_hls\\vdif_packetizer_hls"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "10/15/26 10:21:54",
+ "timestampMillis": "1792039914945",
+ "status": {
+  "cmdId": "6a6fdea8-a1c4-42cd-91a9-7160430a2eca",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "10/15/26 10:21:57",
+ "timestampMillis": "1792039917256",
+ "status": {
+  "cmdId": "6a6fdea8-a1c4-42cd-91a9-7160430a2eca",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "10/15/26 10:21:57",
+ "timestampMillis": "1792039917321",
+ "status": {
+  "cmdId": "b434bc43-470b-4477-8fca-fd916dc6092f",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "10/15/26 10:21:57",
+ "timestampMillis": "1792039917322",
+ "report": {
+  "path": "",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "10/15/26 10:21:57",
+ "timestampMillis": "1792039917322",
+ "report": {
+  "path": "",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>

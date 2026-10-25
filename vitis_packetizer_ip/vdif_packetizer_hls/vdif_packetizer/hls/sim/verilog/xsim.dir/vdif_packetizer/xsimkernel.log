@@ -1,0 +1,7 @@
+Running: xsim.dir/vdif_packetizer/xsimk.exe -simmode gui -wdb vdif_packetizer.wdb -simrunnum 0 -socket 53386
+Design successfully loaded
+Design Loading Memory Usage: 10912 KB (Peak: 10912 KB)
+Design Loading CPU Usage: 77 ms
+Simulation completed
+Simulation Memory Usage: 22476 KB (Peak: 22476 KB)
+Simulation CPU Usage: 5858 ms

@@ -1,0 +1,79 @@
+[
+  {
+    "directory": "C:\\Users\\SUDHANSHU_BAJPAI\\Projects\\vdif_packetizer_hls\\vdif_packetizer_hls",
+    "arguments": [
+      "C:\\AMDDesignTools\\2025.2\\Vitis\\win64\\tools\\vcxx\\libexec\\clang++.exe",
+      "--sysroot=C:\\AMDDesignTools\\2025.2\\Vitis\\tps\\mingw\\10.0.0\\win64.o\\nt",
+      "-fhls",
+      "-hls-syn-headers-dir=C:\\AMDDesignTools\\2025.2\\Vitis\\common\\technology\\autopilot",
+      "-fhlstoplevel=vdif_packetizer",
+      "-c",
+      "C:\\Users\\SUDHANSHU_BAJPAI\\Projects\\vdif_packetizer\\hls\\top.cpp"
+    ],
+    "file": "C:\\Users\\SUDHANSHU_BAJPAI\\Projects\\vdif_packetizer\\hls\\top.cpp"
+  },
+  {
+    "directory": "C:\\Users\\SUDHANSHU_BAJPAI\\Projects\\vdif_packetizer_hls\\vdif_packetizer_hls",
+    "arguments": [
+      "C:\\AMDDesignTools\\2025.2\\Vitis\\win64\\tools\\vcxx\\libexec\\clang++.exe",
+      "--sysroot=C:\\AMDDesignTools\\2025.2\\Vitis\\tps\\mingw\\10.0.0\\win64.o\\nt",
+      "-fhls",
+      "-hls-syn-headers-dir=C:\\AMDDesignTools\\2025.2\\Vitis\\common\\technology\\autopilot",
+      "-fhlstoplevel=vdif_packetizer",
+      "-c",
+      "C:\\Users\\SUDHANSHU_BAJPAI\\Projects\\vdif_packetizer\\hls\\adc_packer.cpp"
+    ],
+    "file": "C:\\Users\\SUDHANSHU_BAJPAI\\Projects\\vdif_packetizer\\hls\\adc_packer.cpp"
+  },
+  {
+    "directory": "C:\\Users\\SUDHANSHU_BAJPAI\\Projects\\vdif_packetizer_hls\\vdif_packetizer_hls",
+    "arguments": [
+      "C:\\AMDDesignTools\\2025.2\\Vitis\\win64\\tools\\vcxx\\libexec\\clang++.exe",
+      "--sysroot=C:\\AMDDesignTools\\2025.2\\Vitis\\tps\\mingw\\10.0.0\\win64.o\\nt",
+      "-fhls",
+      "-hls-syn-headers-dir=C:\\AMDDesignTools\\2025.2\\Vitis\\common\\technology\\autopilot",
+      "-fhlstoplevel=vdif_packetizer",
+      "-c",
+      "C:\\Users\\SUDHANSHU_BAJPAI\\Projects\\vdif_packetizer\\hls\\header_generator.cpp"
+    ],
+    "file": "C:\\Users\\SUDHANSHU_BAJPAI\\Projects\\vdif_packetizer\\hls\\header_generator.cpp"
+  },
+  {
+    "directory": "C:\\Users\\SUDHANSHU_BAJPAI\\Projects\\vdif_packetizer_hls\\vdif_packetizer_hls",
+    "arguments": [
+      "C:\\AMDDesignTools\\2025.2\\Vitis\\win64\\tools\\vcxx\\libexec\\clang++.exe",
+      "--sysroot=C:\\AMDDesignTools\\2025.2\\Vitis\\tps\\mingw\\10.0.0\\win64.o\\nt",
+      "-fhls",
+      "-hls-syn-headers-dir=C:\\AMDDesignTools\\2025.2\\Vitis\\common\\technology\\autopilot",
+      "-fhlstoplevel=vdif_packetizer",
+      "-c",
+      "C:\\Users\\SUDHANSHU_BAJPAI\\Projects\\vdif_packetizer\\hls\\timestamp_engine.cpp"
+    ],
+    "file": "C:\\Users\\SUDHANSHU_BAJPAI\\Projects\\vdif_packetizer\\hls\\timestamp_engine.cpp"
+  },
+  {
+    "directory": "C:\\Users\\SUDHANSHU_BAJPAI\\Projects\\vdif_packetizer_hls\\vdif_packetizer_hls",
+    "arguments": [
+      "C:\\AMDDesignTools\\2025.2\\Vitis\\win64\\tools\\vcxx\\libexec\\clang++.exe",
+      "--sysroot=C:\\AMDDesignTools\\2025.2\\Vitis\\tps\\mingw\\10.0.0\\win64.o\\nt",
+      "-fhls",
+      "-hls-syn-headers-dir=C:\\AMDDesignTools\\2025.2\\Vitis\\common\\technology\\autopilot",
+      "-fhlstoplevel=vdif_packetizer",
+      "-c",
+      "C:\\Users\\SUDHANSHU_BAJPAI\\Projects\\vdif_packetizer\\hls\\vdif_framer.cpp"
+    ],
+    "file": "C:\\Users\\SUDHANSHU_BAJPAI\\Projects\\vdif_packetizer\\hls\\vdif_framer.cpp"
+  },
+  {
+    "directory": "C:\\Users\\SUDHANSHU_BAJPAI\\Projects\\vdif_packetizer_hls\\vdif_packetizer_hls",
+    "arguments": [
+      "C:\\AMDDesignTools\\2025.2\\Vitis\\win64\\tools\\vcxx\\libexec\\clang++.exe",
+      "--sysroot=C:\\AMDDesignTools\\2025.2\\Vitis\\tps\\mingw\\10.0.0\\win64.o\\nt",
+      "-fhls-tb",
+      "-hls-sim-headers-dir=C:\\AMDDesignTools\\2025.2\\Vitis\\include",
+      "-c",
+      "C:\\Users\\SUDHANSHU_BAJPAI\\Projects\\vdif_packetizer\\tb\\tb_top.cpp"
+    ],
+    "file": "C:\\Users\\SUDHANSHU_BAJPAI\\Projects\\vdif_packetizer\\tb\\tb_top.cpp"
+  }
+]

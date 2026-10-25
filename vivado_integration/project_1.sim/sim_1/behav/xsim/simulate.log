@@ -1,0 +1,6 @@
+Time resolution is 1 ps
+Starting two-frame BRAM writer/re-arm regression
+Accepted input words total: 528 (expected 528)
+Final packet_done=1, ready=0, errors=0
+PASS: two frames captured, BRAM verified, re-arm verified
+$finish called at time : 17088 ns : File "C:/Users/SUDHANSHU_BAJPAI/Projects/ip/project_1/project_1.srcs/sim_1/new/tb_axis_bram_writer.v" Line 174

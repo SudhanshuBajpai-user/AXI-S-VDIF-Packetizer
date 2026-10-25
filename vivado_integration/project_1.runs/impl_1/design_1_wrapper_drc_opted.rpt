@@ -1,0 +1,46 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
+| Date         : Sun Oct 18 15:36:54 2026
+| Host         : LAPTOP-TDCMFGHM running 64-bit major release  (build 9200)
+| Command      : report_drc -file design_1_wrapper_drc_opted.rpt -pb design_1_wrapper_drc_opted.pb -rpx design_1_wrapper_drc_opted.rpx
+| Design       : design_1_wrapper
+| Device       : xc7z020clg400-1
+| Speed File   : -1
+| Design State : Synthesized
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Report DRC
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: checkpoint_design_1_wrapper
+      Design limits: <entire design considered>
+           Ruledeck: default
+             Max checks: <unlimited>
+             Checks found: 2
++-----------+----------+----------------------------+--------+
+| Rule      | Severity | Description                | Checks |
++-----------+----------+----------------------------+--------+
+| REQP-1839 | Warning  | RAMB36 async control check | 2      |
++-----------+----------+----------------------------+--------+
+
+2. REPORT DETAILS
+-----------------
+REQP-1839#1 Warning
+RAMB36 async control check  
+The RAMB36E1 design_1_i/vdif_packetizer_0/inst/grp_vdif_packetizer_core_8_s_fu_64/packed_fifo_U/U_vdif_packetizer_fifo_w32_d1024_A_ram/mem_reg has an input control pin design_1_i/vdif_packetizer_0/inst/grp_vdif_packetizer_core_8_s_fu_64/packed_fifo_U/U_vdif_packetizer_fifo_w32_d1024_A_ram/mem_reg/ENBWREN (net: design_1_i/vdif_packetizer_0/inst/grp_vdif_packetizer_core_8_s_fu_64/packed_fifo_U/U_vdif_packetizer_fifo_w32_d1024_A_ram/mem_reg_i_2_n_0) which is driven by a register (design_1_i/adc_reset_sync_0/inst/sync_ff_reg[1]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#2 Warning
+RAMB36 async control check  
+The RAMB36E1 design_1_i/vdif_packetizer_0/inst/grp_vdif_packetizer_core_8_s_fu_64/packed_fifo_U/U_vdif_packetizer_fifo_w32_d1024_A_ram/mem_reg has an input control pin design_1_i/vdif_packetizer_0/inst/grp_vdif_packetizer_core_8_s_fu_64/packed_fifo_U/U_vdif_packetizer_fifo_w32_d1024_A_ram/mem_reg/RSTRAMB (net: design_1_i/vdif_packetizer_0/inst/grp_vdif_packetizer_core_8_s_fu_64/packed_fifo_U/U_vdif_packetizer_fifo_w32_d1024_A_ram/ap_rst_n) which is driven by a register (design_1_i/adc_reset_sync_0/inst/sync_ff_reg[1]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+

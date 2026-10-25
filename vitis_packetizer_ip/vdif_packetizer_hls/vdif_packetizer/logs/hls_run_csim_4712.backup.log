@@ -1,0 +1,434 @@
+  **** HLS Build v2025.2 6295257
+INFO: [HLS 200-2005] Using work_dir C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer_hls/vdif_packetizer_hls/vdif_packetizer 
+INFO: [HLS 200-2176] Writing Vitis IDE component file C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer_hls/vdif_packetizer_hls/vdif_packetizer/vitis-comp.json
+INFO: [HLS 200-10] Creating and opening component 'C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer_hls/vdif_packetizer_hls/vdif_packetizer'.
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.amd.com/access/sources/dita/topic?Doc_Version=2025.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-2174] Applying component config ini file hls_config.cfg
+INFO: [HLS 200-1465] Applying config ini 'syn.file=../../vdif_packetizer/hls/adc_packer.cpp' from hls_config.cfg(8)
+INFO: [HLS 200-10] Adding design file 'C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer/hls/adc_packer.cpp' to the project
+INFO: [HLS 200-1465] Applying config ini 'syn.file=../../vdif_packetizer/hls/axis_types.h' from hls_config.cfg(9)
+INFO: [HLS 200-10] Adding design file 'C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer/hls/axis_types.h' to the project
+INFO: [HLS 200-1465] Applying config ini 'syn.file=../../vdif_packetizer/hls/header_generator.cpp' from hls_config.cfg(10)
+INFO: [HLS 200-10] Adding design file 'C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer/hls/header_generator.cpp' to the project
+INFO: [HLS 200-1465] Applying config ini 'syn.file=../../vdif_packetizer/hls/timestamp_engine.cpp' from hls_config.cfg(11)
+INFO: [HLS 200-10] Adding design file 'C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer/hls/timestamp_engine.cpp' to the project
+INFO: [HLS 200-1465] Applying config ini 'syn.file=../../vdif_packetizer/hls/top.cpp' from hls_config.cfg(12)
+INFO: [HLS 200-10] Adding design file 'C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer/hls/top.cpp' to the project
+INFO: [HLS 200-1465] Applying config ini 'syn.file=../../vdif_packetizer/hls/vdif_config.h' from hls_config.cfg(13)
+INFO: [HLS 200-10] Adding design file 'C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer/hls/vdif_config.h' to the project
+INFO: [HLS 200-1465] Applying config ini 'syn.file=../../vdif_packetizer/hls/vdif_framer.cpp' from hls_config.cfg(14)
+INFO: [HLS 200-10] Adding design file 'C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer/hls/vdif_framer.cpp' to the project
+INFO: [HLS 200-1465] Applying config ini 'tb.file=../../vdif_packetizer/tb/tb_top.cpp' from hls_config.cfg(15)
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer/tb/tb_top.cpp' to the project
+INFO: [HLS 200-1465] Applying config ini 'syn.top=vdif_packetizer' from hls_config.cfg(7)
+INFO: [HLS 200-1465] Applying config ini 'flow_target=vivado' from hls_config.cfg(4)
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.amd.com/access/sources/dita/topic?Doc_Version=2025.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1465] Applying config ini 'part=xc7z020clg400-1' from hls_config.cfg(1)
+INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-1465] Applying config ini 'cosim.trace_level=all' from hls_config.cfg(16)
+INFO: [HLS 200-1465] Applying config ini 'package.output.format=ip_catalog' from hls_config.cfg(5)
+INFO: [HLS 200-2176] Writing Vitis IDE component file C:/Users/SUDHANSHU_BAJPAI/Projects/vdif_packetizer_hls/vdif_packetizer_hls/vdif_packetizer/vitis-comp.json
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [HLS 200-2191] C-Simulation will use clang-16 as the compiler
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+   Compiling ../../../../../../vdif_packetizer/tb/tb_top.cpp in debug mode
+   Compiling ../../../../../../vdif_packetizer/hls/top.cpp in debug mode
+   Generating csim.exe
+In file included from ../../../../../../vdif_packetizer/tb/tb_top.cpp:4:
+In file included from C:/AMDDesignTools/2025.2/Vitis/include\ap_int.h:10:
+In file included from C:/AMDDesignTools/2025.2/Vitis/include\etc/ap_common.h:668:
+In file included from C:/AMDDesignTools/2025.2/Vitis/include\etc/ap_private.h:68:
+In file included from C:/AMDDesignTools/2025.2/Vitis/include\hls_half.h:26:
+In file included from C:/AMDDesignTools/2025.2/Vitis/include/etc/hls_half_fpo.h:19:
+In file included from C:/AMDDesignTools/2025.2/Vitis/include\hls_fpo.h:140:
+In file included from C:/AMDDesignTools/2025.2/Vitis/include/floating_point_v7_1_bitacc_cmodel.h:150:
+C:/AMDDesignTools/2025.2/Vitis/include\gmp.h:58:9: warning: '__GMP_LIBGMP_DLL' macro redefined [-Wmacro-redefined]
+#define __GMP_LIBGMP_DLL  0
+        ^
+C:/AMDDesignTools/2025.2/Vitis/include/floating_point_v7_1_bitacc_cmodel.h:142:9: note: previous definition is here
+#define __GMP_LIBGMP_DLL 1
+        ^
+1 warning generated.
+In file included from ../../../../../../vdif_packetizer/hls/top.cpp:1:
+In file included from C:/AMDDesignTools/2025.2/Vitis/include\ap_int.h:10:
+In file included from C:/AMDDesignTools/2025.2/Vitis/include\etc/ap_common.h:668:
+In file included from C:/AMDDesignTools/2025.2/Vitis/include\etc/ap_private.h:68:
+In file included from C:/AMDDesignTools/2025.2/Vitis/include\hls_half.h:26:
+In file included from C:/AMDDesignTools/2025.2/Vitis/include/etc/hls_half_fpo.h:19:
+In file included from C:/AMDDesignTools/2025.2/Vitis/include\hls_fpo.h:140:
+In file included from C:/AMDDesignTools/2025.2/Vitis/include/floating_point_v7_1_bitacc_cmodel.h:150:
+C:/AMDDesignTools/2025.2/Vitis/include\gmp.h:58:9: warning: '__GMP_LIBGMP_DLL' macro redefined [-Wmacro-redefined]
+#define __GMP_LIBGMP_DLL  0
+        ^
+C:/AMDDesignTools/2025.2/Vitis/include/floating_point_v7_1_bitacc_cmodel.h:142:9: note: previous definition is here
+#define __GMP_LIBGMP_DLL 1
+        ^
+1 warning generated.
+PPS pulse at cycle 0
+PPS pulse at cycle 4200
+PPS pulse at cycle 8400
+PPS pulse at cycle 12600
+TLAST detected : Frame 1 at output word 4103
+PPS pulse at cycle 16800
+PPS pulse at cycle 21000
+PPS pulse at cycle 25200
+PPS pulse at cycle 29400
+TLAST detected : Frame 2 at output word 8207
+PPS pulse at cycle 33600
+PPS pulse at cycle 37800
+PPS pulse at cycle 42000
+PPS pulse at cycle 46200
+TLAST detected : Frame 3 at output word 12311
+PPS pulse at cycle 50400
+PPS pulse at cycle 54600
+PPS pulse at cycle 58800
+PPS pulse at cycle 63000
+TLAST detected : Frame 4 at output word 16415
+PPS pulse at cycle 67200
+PPS pulse at cycle 71400
+PPS pulse at cycle 75600
+PPS pulse at cycle 79800
+TLAST detected : Frame 5 at output word 20519
+PPS pulse at cycle 84000
+PPS pulse at cycle 88200
+PPS pulse at cycle 92400
+PPS pulse at cycle 96600
+TLAST detected : Frame 6 at output word 24623
+PPS pulse at cycle 100800
+PPS pulse at cycle 105000
+PPS pulse at cycle 109200
+PPS pulse at cycle 113400
+TLAST detected : Frame 7 at output word 28727
+PPS pulse at cycle 117600
+PPS pulse at cycle 121800
+PPS pulse at cycle 126000
+PPS pulse at cycle 130200
+TLAST detected : Frame 8 at output word 32831
+PPS pulse at cycle 134400
+PPS pulse at cycle 138600
+PPS pulse at cycle 142800
+PPS pulse at cycle 147000
+TLAST detected : Frame 9 at output word 36935
+PPS pulse at cycle 151200
+PPS pulse at cycle 155400
+PPS pulse at cycle 159600
+PPS pulse at cycle 163800
+TLAST detected : Frame 10 at output word 41039
+PPS pulse at cycle 168000
+PPS pulse at cycle 172200
+PPS pulse at cycle 176400
+TLAST detected : Frame 11 at output word 45143
+PPS pulse at cycle 180600
+PPS pulse at cycle 184800
+PPS pulse at cycle 189000
+PPS pulse at cycle 193200
+TLAST detected : Frame 12 at output word 49247
+PPS pulse at cycle 197400
+PPS pulse at cycle 201600
+PPS pulse at cycle 205800
+PPS pulse at cycle 210000
+TLAST detected : Frame 13 at output word 53351
+PPS pulse at cycle 214200
+PPS pulse at cycle 218400
+PPS pulse at cycle 222600
+PPS pulse at cycle 226800
+TLAST detected : Frame 14 at output word 57455
+PPS pulse at cycle 231000
+PPS pulse at cycle 235200
+PPS pulse at cycle 239400
+PPS pulse at cycle 243600
+TLAST detected : Frame 15 at output word 61559
+PPS pulse at cycle 247800
+PPS pulse at cycle 252000
+PPS pulse at cycle 256200
+PPS pulse at cycle 260400
+TLAST detected : Frame 16 at output word 65663
+PPS pulse at cycle 264600
+PPS pulse at cycle 268800
+PPS pulse at cycle 273000
+PPS pulse at cycle 277200
+TLAST detected : Frame 17 at output word 69767
+PPS pulse at cycle 281400
+PPS pulse at cycle 285600
+PPS pulse at cycle 289800
+PPS pulse at cycle 294000
+TLAST detected : Frame 18 at output word 73871
+PPS pulse at cycle 298200
+PPS pulse at cycle 302400
+PPS pulse at cycle 306600
+PPS pulse at cycle 310800
+TLAST detected : Frame 19 at output word 77975
+PPS pulse at cycle 315000
+PPS pulse at cycle 319200
+PPS pulse at cycle 323400
+PPS pulse at cycle 327600
+TLAST detected : Frame 20 at output word 82079
+PPS pulse at cycle 331800
+PPS pulse at cycle 336000
+PPS pulse at cycle 340200
+TLAST detected : Frame 21 at output word 86183
+PPS pulse at cycle 344400
+PPS pulse at cycle 348600
+PPS pulse at cycle 352800
+PPS pulse at cycle 357000
+TLAST detected : Frame 22 at output word 90287
+PPS pulse at cycle 361200
+PPS pulse at cycle 365400
+PPS pulse at cycle 369600
+PPS pulse at cycle 373800
+TLAST detected : Frame 23 at output word 94391
+PPS pulse at cycle 378000
+PPS pulse at cycle 382200
+PPS pulse at cycle 386400
+PPS pulse at cycle 390600
+TLAST detected : Frame 24 at output word 98495
+PPS pulse at cycle 394800
+PPS pulse at cycle 399000
+PPS pulse at cycle 403200
+PPS pulse at cycle 407400
+TLAST detected : Frame 25 at output word 102599
+PPS pulse at cycle 411600
+PPS pulse at cycle 415800
+PPS pulse at cycle 420000
+PPS pulse at cycle 424200
+TLAST detected : Frame 26 at output word 106703
+PPS pulse at cycle 428400
+PPS pulse at cycle 432600
+PPS pulse at cycle 436800
+PPS pulse at cycle 441000
+TLAST detected : Frame 27 at output word 110807
+PPS pulse at cycle 445200
+PPS pulse at cycle 449400
+PPS pulse at cycle 453600
+PPS pulse at cycle 457800
+TLAST detected : Frame 28 at output word 114911
+PPS pulse at cycle 462000
+PPS pulse at cycle 466200
+PPS pulse at cycle 470400
+PPS pulse at cycle 474600
+TLAST detected : Frame 29 at output word 119015
+PPS pulse at cycle 478800
+PPS pulse at cycle 483000
+PPS pulse at cycle 487200
+PPS pulse at cycle 491400
+TLAST detected : Frame 30 at output word 123119
+PPS pulse at cycle 495600
+PPS pulse at cycle 499800
+PPS pulse at cycle 504000
+TLAST detected : Frame 31 at output word 127223
+PPS pulse at cycle 508200
+PPS pulse at cycle 512400
+PPS pulse at cycle 516600
+PPS pulse at cycle 520800
+TLAST detected : Frame 32 at output word 131327
+PPS pulse at cycle 525000
+PPS pulse at cycle 529200
+PPS pulse at cycle 533400
+PPS pulse at cycle 537600
+TLAST detected : Frame 33 at output word 135431
+PPS pulse at cycle 541800
+PPS pulse at cycle 546000
+PPS pulse at cycle 550200
+PPS pulse at cycle 554400
+TLAST detected : Frame 34 at output word 139535
+PPS pulse at cycle 558600
+PPS pulse at cycle 562800
+PPS pulse at cycle 567000
+PPS pulse at cycle 571200
+TLAST detected : Frame 35 at output word 143639
+PPS pulse at cycle 575400
+PPS pulse at cycle 579600
+PPS pulse at cycle 583800
+PPS pulse at cycle 588000
+TLAST detected : Frame 36 at output word 147743
+PPS pulse at cycle 592200
+PPS pulse at cycle 596400
+PPS pulse at cycle 600600
+PPS pulse at cycle 604800
+TLAST detected : Frame 37 at output word 151847
+PPS pulse at cycle 609000
+PPS pulse at cycle 613200
+PPS pulse at cycle 617400
+PPS pulse at cycle 621600
+TLAST detected : Frame 38 at output word 155951
+PPS pulse at cycle 625800
+PPS pulse at cycle 630000
+PPS pulse at cycle 634200
+PPS pulse at cycle 638400
+TLAST detected : Frame 39 at output word 160055
+PPS pulse at cycle 642600
+PPS pulse at cycle 646800
+PPS pulse at cycle 651000
+PPS pulse at cycle 655200
+TLAST detected : Frame 40 at output word 164159
+PPS pulse at cycle 659400
+PPS pulse at cycle 663600
+PPS pulse at cycle 667800
+TLAST detected : Frame 41 at output word 168263
+PPS pulse at cycle 672000
+PPS pulse at cycle 676200
+PPS pulse at cycle 680400
+PPS pulse at cycle 684600
+TLAST detected : Frame 42 at output word 172367
+PPS pulse at cycle 688800
+PPS pulse at cycle 693000
+PPS pulse at cycle 697200
+PPS pulse at cycle 701400
+TLAST detected : Frame 43 at output word 176471
+PPS pulse at cycle 705600
+PPS pulse at cycle 709800
+PPS pulse at cycle 714000
+PPS pulse at cycle 718200
+TLAST detected : Frame 44 at output word 180575
+PPS pulse at cycle 722400
+PPS pulse at cycle 726600
+PPS pulse at cycle 730800
+PPS pulse at cycle 735000
+TLAST detected : Frame 45 at output word 184679
+PPS pulse at cycle 739200
+PPS pulse at cycle 743400
+PPS pulse at cycle 747600
+PPS pulse at cycle 751800
+TLAST detected : Frame 46 at output word 188783
+PPS pulse at cycle 756000
+PPS pulse at cycle 760200
+PPS pulse at cycle 764400
+PPS pulse at cycle 768600
+TLAST detected : Frame 47 at output word 192887
+PPS pulse at cycle 772800
+PPS pulse at cycle 777000
+PPS pulse at cycle 781200
+PPS pulse at cycle 785400
+TLAST detected : Frame 48 at output word 196991
+PPS pulse at cycle 789600
+PPS pulse at cycle 793800
+PPS pulse at cycle 798000
+PPS pulse at cycle 802200
+TLAST detected : Frame 49 at output word 201095
+PPS pulse at cycle 806400
+PPS pulse at cycle 810600
+PPS pulse at cycle 814800
+PPS pulse at cycle 819000
+TLAST detected : Frame 50 at output word 205199
+PPS pulse at cycle 823200
+PPS pulse at cycle 827400
+PPS pulse at cycle 831600
+TLAST detected : Frame 51 at output word 209303
+PPS pulse at cycle 835800
+PPS pulse at cycle 840000
+PPS pulse at cycle 844200
+PPS pulse at cycle 848400
+TLAST detected : Frame 52 at output word 213407
+PPS pulse at cycle 852600
+PPS pulse at cycle 856800
+PPS pulse at cycle 861000
+PPS pulse at cycle 865200
+TLAST detected : Frame 53 at output word 217511
+PPS pulse at cycle 869400
+PPS pulse at cycle 873600
+PPS pulse at cycle 877800
+PPS pulse at cycle 882000
+TLAST detected : Frame 54 at output word 221615
+PPS pulse at cycle 886200
+PPS pulse at cycle 890400
+PPS pulse at cycle 894600
+PPS pulse at cycle 898800
+TLAST detected : Frame 55 at output word 225719
+PPS pulse at cycle 903000
+PPS pulse at cycle 907200
+PPS pulse at cycle 911400
+PPS pulse at cycle 915600
+TLAST detected : Frame 56 at output word 229823
+PPS pulse at cycle 919800
+PPS pulse at cycle 924000
+PPS pulse at cycle 928200
+PPS pulse at cycle 932400
+TLAST detected : Frame 57 at output word 233927
+PPS pulse at cycle 936600
+PPS pulse at cycle 940800
+PPS pulse at cycle 945000
+PPS pulse at cycle 949200
+TLAST detected : Frame 58 at output word 238031
+PPS pulse at cycle 953400
+PPS pulse at cycle 957600
+PPS pulse at cycle 961800
+PPS pulse at cycle 966000
+TLAST detected : Frame 59 at output word 242135
+PPS pulse at cycle 970200
+PPS pulse at cycle 974400
+PPS pulse at cycle 978600
+PPS pulse at cycle 982800
+TLAST detected : Frame 60 at output word 246239
+PPS pulse at cycle 987000
+PPS pulse at cycle 991200
+PPS pulse at cycle 995400
+TLAST detected : Frame 61 at output word 250343
+PPS pulse at cycle 999600
+PPS pulse at cycle 1003800
+PPS pulse at cycle 1008000
+PPS pulse at cycle 1012200
+TLAST detected : Frame 62 at output word 254447
+PPS pulse at cycle 1016400
+PPS pulse at cycle 1020600
+PPS pulse at cycle 1024800
+PPS pulse at cycle 1029000
+TLAST detected : Frame 63 at output word 258551
+PPS pulse at cycle 1033200
+PPS pulse at cycle 1037400
+PPS pulse at cycle 1041600
+PPS pulse at cycle 1045800
+TLAST detected : Frame 64 at output word 262655
+PPS pulse at cycle 1050000
+PPS pulse at cycle 1054200
+PPS pulse at cycle 1058400
+PPS pulse at cycle 1062600
+TLAST detected : Frame 65 at output word 266759
+PPS pulse at cycle 1066800
+PPS pulse at cycle 1071000
+PPS pulse at cycle 1075200
+PPS pulse at cycle 1079400
+TLAST detected : Frame 66 at output word 270863
+PPS pulse at cycle 1083600
+PPS pulse at cycle 1087800
+PPS pulse at cycle 1092000
+PPS pulse at cycle 1096200
+TLAST detected : Frame 67 at output word 274967
+PPS pulse at cycle 1100400
+PPS pulse at cycle 1104600
+PPS pulse at cycle 1108800
+PPS pulse at cycle 1113000
+TLAST detected : Frame 68 at output word 279071
+PPS pulse at cycle 1117200
+PPS pulse at cycle 1121400
+PPS pulse at cycle 1125600
+PPS pulse at cycle 1129800
+TLAST detected : Frame 69 at output word 283175
+PPS pulse at cycle 1134000
+PPS pulse at cycle 1138200
+PPS pulse at cycle 1142400
+PPS pulse at cycle 1146600
+TLAST detected : Frame 70 at output word 287279
+PPS pulse at cycle 1150800
+PPS pulse at cycle 1155000
+PPS pulse at cycle 1159200
+TLAST detected : Frame 71 at output word 291383
+PPS pulse at cycle 1163400
+PPS pulse at cycle 1167600
+PPS pulse at cycle 1171800
+PPS pulse at cycle 1176000
+TLAST detected : Frame 72 at output word 295487
+All 12 VDIF frames received at cycle 1179647
+
+========== VDIF MULTI-PPS TEST SUMMARY ==========
+ADC Samples      : 1179648
+Frames Generated : 72
+Output Words     : 295488
+Expected Words   : 295488
+MULTI-PPS TEST PASSED
+INFO [HLS SIM]: The maximum depth reached by any hls::stream() instance in the design is 3
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-112] Total CPU user time: 2 seconds. Total CPU system time: 2 seconds. Total elapsed time: 22.177 seconds; peak allocated memory: 141.770 MB.
+INFO: [vitis-run 60-791] Total elapsed time: 0h 0m 28s
