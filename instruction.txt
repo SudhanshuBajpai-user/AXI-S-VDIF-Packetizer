@@ -1,0 +1,51 @@
+PROJECT OVERVIEW — RED PITAYA VDIF PACKETIZER
+
+1. PURPOSE
+This project validates a VDIF packetization and UDP delivery pipeline on Red Pitaya / Zynq hardware. A counter provides deterministic test samples, the packetizer creates frames, a BRAM writer stores packet words, and the PS/software path transmits data over UDP to a PC for checking.
+
+2. HIGH-LEVEL DATA FLOW
+Counter test source -> VDIF packetizer -> AXI-stream output -> BRAM writer -> BRAM / Zynq PS -> UDP sender -> PC receiver and audit.
+
+IMPORTANT: The currently inspected generated RTL connects the counter output to the packetizer data input. The ADC receiver exists in the design, but its output was not connected to the packetizer input in that RTL. Do not describe this as a verified live ADC-to-UDP pipeline until that connection is made and tested.
+
+3. REPORTED SUCCESSFUL TEST
+The reported multi-frame test received 10 UDP datagrams, each 1,056 bytes. All 10 passed the audit. Payload counter progression matched the expected 00, 01, 02, ... sequence, and VDIF frame numbers advanced from 702 to 711. The timestamp seconds field remained 217.
+
+Audit file:
+C:\Users\SUDHANSHU_BAJPAI\Projects\ip\project_1\udp_multi_run_fixed\udp_multi_audit.txt
+
+This proves the reported 10-frame counter-based test only. It does not prove long-duration reliability or seconds rollover.
+
+4. PREVIOUSLY REPORTED SIMULATION RESULTS
+- Packetizer standalone test: six frames, 1,584 words, TLAST every 264 words.
+- Writer + BRAM standalone test: 264 words read back, zero errors, packet_done asserted.
+- Integrated simulation: 264 output words accepted and 264 BRAM write observations; addresses 0x000 to 0x41C; one packet completion.
+
+5. CURRENT HARDWARE-DEBUG NOTE
+A later ILA capture showed counter Q = 0x09, packet output TDATA = 0x00000000, TVALID = 1, TLAST = 0, and BRAM write enable = 0 across the visible portion of the waveform. This does not show active packet progress. The counter CE is connected to packetizer input TREADY. Check input READY, reset release, and clock behavior in the actual ILA capture. Confirm the board is programmed with the intended bitstream; the successful UDP run and later ILA capture may not represent the same run or configuration.
+
+6. ILA PROBE REFERENCE
+Probe 0: packet output TDATA
+Probe 1: packet output TVALID
+Probe 2: shared output READY / writer ready (Net)
+Probe 3: packet output TLAST
+Probe 4: packet_done
+Probe 5: BRAM write enable
+Probe 6: counter Q
+Probe 7: BRAM write data
+Probe 8: packetizer input TREADY (counter enable)
+Probe 9: active-low reset release signal srst_n
+
+7. NEXT ACTIONS
+A. Confirm the programmed bitstream matches the current implementation.
+B. Capture probes 6, 8, and 9 and verify the counter changes, READY is high, and reset is released.
+C. Check packet output and BRAM writes using probes 0–5.
+D. Run a 100-frame UDP test; target 100 received, 100 passed, zero failed.
+E. Test a VDIF seconds rollover across a PPS boundary.
+F. Connect the real ADC receiver output to the packetizer input and repeat simulation and hardware tests.
+G. Perform longer-duration packet-loss testing before making reliability claims.
+
+8. REPORTING STATUS ACCURATELY
+Safe claim: "The counter-based UDP pipeline passed a reported 10-frame integrity test, with all 10 datagrams passing payload and frame-number checks."
+
+Do not yet claim: "Live ADC-to-UDP is fully validated," "PPS rollover is verified," or "long-duration packet loss is zero." Those require separate evidence.
